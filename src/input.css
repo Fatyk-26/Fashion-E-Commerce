@@ -1,2 +1,36 @@
 @import "tailwindcss";
 
+.price-range {
+  appearance: none;
+  background: transparent;
+  pointer-events: none;
+}
+
+.price-range::-webkit-slider-runnable-track {
+  background: transparent;
+}
+
+.price-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #374151;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.price-range::-moz-range-track {
+  background: transparent;
+}
+
+.price-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #374151;
+  cursor: pointer;
+  pointer-events: auto;
+}

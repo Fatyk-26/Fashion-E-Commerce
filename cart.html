@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <title>Fashion-Store</title>
+</head>
+
+<body>
+<div id="header"></div>
+ <div id="toast-container"  class="fixed top-24 left-1/2 -translate-x-1/2 z-[6000] flex flex-col gap-3"></div>
+<section class="pt-20">
+    <h2 class="text-center text-3xl p-12 font-semibold">Shopping Cart</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-6">
+        <div class="lg:col-span-2">
+       
+            <div class="hidden md:grid grid-cols-4 gap-4 border-b border-gray-200 pb-3 mb-4 text-sm font-semibold text-gray-500">
+                <p>Product</p>
+                <p>Price</p>
+                <p>Quantity</p>
+                <p>Subtotal</p>
+            </div>
+            <div id="cart-products" class="flex flex-col gap-4"></div>
+        </div>
+
+        <aside class="border border-gray-200 rounded-2xl p-6 h-fit">
+            <h3 class="text-xl font-semibold mb-6">Cart Totals</h3>
+            <div class="flex justify-between border-b pb-4">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">0 SAR</span>
+            </div>
+
+            <div class="flex justify-between py-4">
+                <span>Shipping</span>
+                <span>Free</span>
+            </div>
+
+            <div class="border-t pt-4 flex justify-between font-bold text-lg">
+                <span>Total</span>
+                <span id="cart-total">0 SAR</span>
+            </div>
+
+            <button
+                class="w-full mt-6 bg-olive-800 text-white py-3 rounded-xl hover:opacity-85"
+                type="button">
+                Proceed to Checkout
+            </button>
+        </aside>
+
+    </div>
+</section>  
+
+<script src="./js/header.js"></script>
+<script src="./js/data.js"></script>
+<script src="./js/store.js"></script>
+<script src="./js/cart.js"></script>
+</body>
+</html>

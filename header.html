@@ -1,0 +1,31 @@
+<header class="bg-neutral-100 flex w-full fixed h-20 z-5000 items-center justify-evenly text-slate-900 font-semibold "  >
+        <img class="w-35 h-21 " src="assests/images/logo.png" alt="fashion-store-logo">
+        <nav class="flex">
+            <ul  class="flex gap-4 ">
+                <li class="hover:opacity-45"><a href="index.html">Home</a></li>
+                <li class="hover:opacity-45"><a href="shop.html">Shop</a></li>
+                <li class="hover:opacity-45"> <a href="orders.html">Orders</a></li>
+                <li class="hover:opacity-45"> <a href="about.html">About Us</a></li>
+                <li class="hover:opacity-45"> <a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <nav class="flex gap-3 ">
+            <div class="relative">
+            <i class="fa-solid fa-magnifying-glass absolute p-3 text-olive-600 text-xs"></i>
+           <input  class="search-field border border-gray-300 rounded-xl px-4 pl-7 py-1 outline-none focus:border-olive-600 font-normal"
+            type="search" >  
+    
+            <div id="search-results" class="absolute top-full left-0 mt-2 w-full bg-white border border-gray-200 rounded-xl shadow-md hidden z-50">
+            </div>  
+            </div>
+            <ul class="flex gap-3 pt-1" >
+            <li class="hover:opacity-45"><a href="#">Login</a></li>
+            <li class="hover:opacity-45"><a href="#">Register</a></li>
+            <a href="wishlist.html"><i class="fa-regular fa-heart py-1 hover:opacity-45 "></i>
+            <span id="wishlist-count">0</span></a>
+            <a href="cart.html"> <i class="fa-solid fa-cart-shopping py-1 hover:opacity-45"></i>
+            <span id="cart-count">0</span></a></a>
+        </ul>
+        </nav>
+    </header>

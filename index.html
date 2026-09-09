@@ -5,76 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-
     <title>Fashion-Store</title>
+
+        <!-- npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch -->
 </head>
 <body>
-    <header class="bg-neutral-100 flex w-full fixed h-20 z-5000 items-center justify-evenly text-slate-900 font-semibold "  >
-        <img class="w-35 h-21 " src="assest/images/logo.png" alt="fashion-store-logo">
-        <nav class="flex">
-            <ul  class="flex gap-4 ">
-                <li class="hover:opacity-45"><a href="#">Home</a></li>
-                <li class="hover:opacity-45"><a href="#">Shop</a></li>
-                <li class="hover:opacity-45"> <a href="#">Orders</a></li>
-                <li class="hover:opacity-45"> <a href="#">About Us</a></li>
-                <li class="hover:opacity-45"> <a href="#">Contact Us</a></li>
-            </ul>
-        </nav>
 
-        <nav class="flex gap-3 ">
-            <form action="">
-            <input class=" border border-gray-300 rounded-xl bg-white p-1 font-normal " type="search" placeholder="search...">
-            </form>
-            <ul class="flex gap-3 pt-1" >
-            <li class="hover:opacity-45"><a href="#">Login</a></li>
-            <li class="hover:opacity-45"><a href="#">Register</a></li>
-            <i class="fa-regular fa-heart py-1 hover:opacity-45 "></i>
-            <i class="fa-solid fa-cart-shopping py-1 hover:opacity-45"></i>
-        </ul>
-        </nav>
-    </header>
+
+      <div id="header">
+      </div>
+      <div id="toast-container"  class="fixed top-24 left-1/2 -translate-x-1/2 z-[6000] flex flex-col gap-3">
+      </div>
 
 <!--Hero Section-->
     <section class="w-full h-screen relative ">
-        <img class="w-full h-full object-cover object-top absolute inset-0 -z-10 opacity-87  " src="assest/images/hero-bg.jpg" alt="fashion-img">
+        <img class="w-full h-full object-cover object-top absolute inset-0 -z-10 opacity-87  " src="assests/images/hero-bg.jpg" alt="fashion-img">
         <div class="w-full h-full flex flex-col justify-center items-start pl-10"> 
-            <h3 class="text-slate-900 font-semibold text-7xl text-shadow-lg text-shadow-violet-300 ">Lifestyle <br>Fashion <br> Destination</h3>
+            <h3 class="text-olive-800 font-semibold text-7xl text-shadow-md text-shadow-olive-400 ">Lifestyle <br>Fashion <br> Destination</h3>
             <p class="text-stone-500 text-sm pt-4 font-semibold ">Our collection brings together modern trends, timeless elegance, and <br>carefully selected pieces designed to make every look feel special.</p>
-            <button class="border border-gray-200 rounded-3xl w-30 mt-5 p-2 text-white bg-slate-900 font-semibold hover:opacity-85 " type="button">SHOP NOW</button>
+       <a href="shop.html">   <button class="border border-gray-200 rounded-3xl w-30 mt-5 p-2 text-white bg-olive-800 text-shadow-xl   font-semibold hover:opacity-85 " type="button">SHOP NOW</button></a>  
         </div>
     </section>
 
     <!--Categories Section-->
     <section>
         <h2 class="text-center text-3xl p-12 font-semibold ">Products Categories</h2>
-        <section class="grid grid-cols-4 max-w-7xl mx-auto gap-6 pb-16 ">
+        <section class="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 max-w-7xl mx-auto gap-6 pb-16">
         <div class="border border-gray-300 rounded-2xl p-5">
-            <img class="w-full h-64 object-cover" src="assest/images/clothing.jpg" alt="#">
+            <img class="w-full h-64 object-cover" src="assests/images/clothing.jpg" alt="#">
             <h3 class="font-semibold text-stone-700 mt-2 text-xl">Clothing</h3>
-           <a href="#" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold text-slate-600 transition-transform duration-200 hover:scale-105">
-        Explore Collection<i class="fa-solid fa-arrow-right pt-1"></i> </a>
+           <a href="shop.html" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold text-olive-500 transition-transform duration-200 hover:scale-105">
+        Explore Collection
+        <i class="fa-solid fa-arrow-right pt-1"></i> </a>
         </div>
 
         <div class="border border-gray-300 rounded-2xl p-5">
-            <img class="w-full h-64 object-cover" src="assest/images/shoes.png" alt="#">
+            <img class="w-full h-64 object-cover" src="assests/images/shoes.png" alt="#">
             <h3 class="font-semibold text-stone-700 mt-2 text-xl">Shoes</h3>
-            <a href="#" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold text-slate-600 transition-transform duration-200 hover:scale-105 ">
-        Explore Collection<i class="fa-solid fa-arrow-right pt-1"></i> </a>
+            <a href="shop.html" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold text-olive-500 transition-transform duration-200 hover:scale-105 ">
+        Explore Collection
+        <i class="fa-solid fa-arrow-right pt-1"></i> </a>
         </div>
 
         <div class="border border-gray-300 rounded-2xl p-5">
-            <img class="w-full h-64 object-cover" src="assest/images/bags.jpg" alt="#">
+            <img class="w-full h-64 object-cover" src="assests/images/bags.jpg" alt="#">
             <h3 class="font-semibold text-stone-700 mt-2 text-xl">Bags</h3>
-            <a href="#" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold text-slate-600 transition-transform duration-200 hover:scale-105 ">
-        Explore Collection<i class="fa-solid fa-arrow-right pt-1"></i> </a>
-</div>
-        </div>
+            <a href="shop.html" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold text-olive-500 transition-transform duration-200 hover:scale-105 ">
+        Explore Collection
+        <i class="fa-solid fa-arrow-right pt-1"></i> </a>
+    </div>
 
         <div class="border border-gray-300 rounded-2xl p-5">
-            <img class="w-full h-64 object-cover" src="assest/images/accessories.png" alt="#">
+            <img class="w-full h-64 object-cover" src="assests/images/accessories.png" alt="#">
             <h3 class="font-semibold text-stone-700 mt-2 text-xl">Accessories</h3>
-           <a href="#" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold text-slate-600 transition-transform duration-200 hover:scale-105 ">
-        Explore Collection<i class="fa-solid fa-arrow-right pt-1"></i> </a>
+           <a href="shop.html" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold text-olive-500 transition-transform duration-200 hover:scale-105 ">
+        Explore Collection
+        <i class="fa-solid fa-arrow-right pt-1"></i> </a>
         </div>
     </section>
     </section>
@@ -83,99 +69,41 @@
     <!--Featured Section-->
     <section>
         <h2 class="text-center text-3xl p-12 font-semibold">Featured Products</h2>
-        <section class="grid grid-cols-3 max-w-6xl mx-auto gap-5 pb-16">
-        <div class="border border-gray-300 rounded-2xl p-5 ">
-           <div class="relative">
-            <img class="w-full h-72 object-cover " src="assest/images/jacket-a.png" alt="#">
-             <span class="absolute top-1 right-1 bg-white text-slate-900 rounded-full w-10 h-10 flex items-center justify-center shadow-sm hover:bg-slate-900 hover:text-white"><i class="fa-regular fa-heart"></i></span></div>
-            <span class="border border-gray-300 rounded-3xl text-xs px-3 bg-gray-300 font-semibold ">Clothes</span>
-            <h3 class="font-semibold text-slate-900 py-1">Summer Dress</h3>
-             <p class="text-xs py-1">Our collection brings together modern trends, timeless elegance, and carefully selected pieces designed to make every look feel special.</p>
-            <p class="text-md text-slate-600 font-bold pb-2">160$</p>
-            <button class="bg-slate-900 px-6 py-1 rounded-2xl block mx-auto text-white hover:opacity-85 " type="button"><i class="fa-solid fa-cart-shopping mr-2"></i>Add to cart</button>
+        <div id="featured-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto gap-5 pb-16">
         </div>
-
-        <div class="border border-gray-300 rounded-2xl p-5 ">
-           <div class="relative">
-            <img class="w-full h-72 object-cover " src="assest/images/jacket-a.png" alt="#">
-             <span class="absolute top-1 right-1 bg-white text-slate-900 rounded-full w-10 h-10 flex items-center justify-center shadow-sm hover:bg-slate-900 hover:text-white"><i class="fa-regular fa-heart"></i></span></div>
-            <span class="border border-gray-300 rounded-3xl text-xs px-3 bg-gray-300 font-semibold ">Clothes</span>
-            <h3 class="font-semibold text-slate-900 py-1">Summer Dress</h3>
-             <p class="text-xs py-1">Our collection brings together modern trends, timeless elegance, and carefully selected pieces designed to make every look feel special.</p>
-            <p class="text-md text-slate-600 font-bold pb-2">160$</p>
-              <button class="bg-slate-900 px-6 py-1 rounded-2xl block mx-auto text-white hover:opacity-85" type="button"><i class="fa-solid fa-cart-shopping mr-2"></i>Add to cart</button>
-        </div>
-
-        <div class="border border-gray-300 rounded-2xl p-5 ">
-           <div class="relative">
-            <img class="w-full h-72 object-cover " src="assest/images/jacket-a.png" alt="#">
-             <span class="absolute top-1 right-1 bg-white text-slate-900 rounded-full w-10 h-10 flex items-center justify-center shadow-sm hover:bg-slate-900 hover:text-white"><i class="fa-regular fa-heart"></i></span></div>
-            <span class="border border-gray-300 rounded-3xl text-xs px-3 bg-gray-300 font-semibold ">Clothes</span>
-            <h3 class="font-semibold text-slate-900 py-1">Summer Dress</h3>
-             <p class="text-xs py-1">Our collection brings together modern trends, timeless elegance, and carefully selected pieces designed to make every look feel special.</p>
-            <p class="text-md text-slate-600 font-bold pb-2">160$</p>
-              <button class="bg-slate-900 px-6 py-1 rounded-2xl block mx-auto text-white hover:opacity-85" type="button"><i class="fa-solid fa-cart-shopping mr-2"></i>Add to cart</button>
-        </div>
-
-        <div class="border border-gray-300 rounded-2xl p-5 ">
-           <div class="relative">
-            <img class="w-full h-72 object-cover " src="assest/images/jacket-a.png" alt="#">
-             <span class="absolute top-1 right-1 bg-white text-slate-900 rounded-full w-10 h-10 flex items-center justify-center shadow-sm hover:bg-slate-900 hover:text-white"><i class="fa-regular fa-heart"></i></span></div>
-            <span class="border border-gray-300 rounded-3xl text-xs px-3 bg-gray-300 font-semibold ">Clothes</span>
-            <h3 class="font-semibold text-slate-900 py-1">Summer Dress</h3>
-             <p class="text-xs py-1">Our collection brings together modern trends, timeless elegance, and carefully selected pieces designed to make every look feel special.</p>
-            <p class="text-md text-slate-600 font-bold pb-2">160$</p>
-              <button class="bg-slate-900 px-6 py-1 rounded-2xl block mx-auto text-white hover:opacity-85" type="button"><i class="fa-solid fa-cart-shopping mr-2"></i>Add to cart</button>
-        </div>
-
-        <div class="border border-gray-300 rounded-2xl p-5 ">
-           <div class="relative">
-            <img class="w-full h-72 object-cover " src="assest/images/jacket-a.png" alt="#">
-             <span class="absolute top-1 right-1 bg-white text-slate-900 rounded-full w-10 h-10 flex items-center justify-center shadow-sm hover:bg-slate-900 hover:text-white"><i class="fa-regular fa-heart"></i></span></div>
-            <span class="border border-gray-300 rounded-3xl text-xs px-3 bg-gray-300 font-semibold ">Clothes</span>
-            <h3 class="font-semibold text-slate-900 py-1">Summer Dress</h3>
-             <p class="text-xs py-1">Our collection brings together modern trends, timeless elegance, and carefully selected pieces designed to make every look feel special.</p>
-            <p class="text-md text-slate-600 font-bold pb-2">160$</p>
-              <button class="bg-slate-900 px-6 py-1 rounded-2xl block mx-auto text-white hover:opacity-85" type="button"><i class="fa-solid fa-cart-shopping mr-2"></i>Add to cart</button>
-        </div>
-
-        <div class="border border-gray-300 rounded-2xl p-5 ">
-            <div class="relative">
-            <img class="w-full h-72 object-cover " src="assest/images/jacket-a.png" alt="#">
-             <span class="absolute top-1 right-1 bg-white text-slate-900 rounded-full w-10 h-10 flex items-center justify-center shadow-sm hover:bg-slate-900 hover:text-white"><i class="fa-regular fa-heart"></i></span></div>
-            <span class="border border-gray-300 rounded-3xl text-xs px-3 bg-gray-300 font-semibold ">Clothes</span>
-            <h3 class="font-semibold text-slate-900 py-1">Summer Dress</h3>
-            <p class="text-xs py-1">Our collection brings together modern trends, timeless elegance, and carefully selected pieces designed to make every look feel special.</p>
-            <p class="text-md text-slate-600 font-bold pb-2">160$</p>
-            <button class="bg-slate-900 px-6 py-1 rounded-2xl block mx-auto text-white hover:opacity-85" type="button"><i class="fa-solid fa-cart-shopping mr-2"></i>Add to cart</button>
-        </div>
-        </section>
     </section>
 
     <!--Newsletter Section-->
-    <section class="flex justify-center items-center p-30 gap-16">
-        <div class="flex flex-col gap-2 ">
-        <h3 class="text-4xl text-slate-700 font-semibold ">Stay in the loop</h3>
+    <section class="flex flex-col md:flex-row justify-center items-center p-30 gap-16">
+    <div class="flex flex-col gap-2">
+        <h3 class="text-4xl text-olive-800 font-semibold">Join Our Newsletter</h3>
         <p>Get updates on new collections, exclusive offers, and the latest trends.</p>
-         </div>
-         <div class="flex rounded-3xl border ">
-        <form class="flex w-full"> <input class=" border-gray-300 py-2 px-4" placeholder="Enter Your Email:" type="email" required>
-        <button class="bg-slate-900 px-9 py-1 text-md rounded-3xl  text-white hover:opacity-85" type="submit">Subscribe</button></form>
-    </div></section>
+    </div>
+    
+    <div class="flex flex-col w-full max-w-md gap-2">
+        <form class="subscribe-form flex rounded-3xl border border-gray-300 overflow-hidden w-full items-center"> 
+            <i class="fa-regular fa-envelope py-3 px-4 shrink-0 text-gray-500"></i>
+            <input class="min-w-0 flex-1 py-2 px-3 outline-none" placeholder="Enter Your Email:" id="email-input" type="text">
+            <button class="subscribe-btn shrink-0 bg-olive-800 px-4 sm:px-9 py-3 text-md text-white hover:opacity-85" type="submit">Join</button>
+        </form>
+        <span class="error-msg block text-red-500 text-sm px-4"></span>
+    </div>
+</section>
+
 
     <!--Footer Section-->
     <footer class="bg-neutral-200 px-8 py-12">
-    <div class="grid grid-cols-4 gap-8 px-12 text-center ">
+    <div class="grid lg:grid-cols-4 sm:grid-cols-3 gap-8 px-12 text-center  ">
         <div class="">
-            <img class="w-40 h-auto block mx-auto" src="assest/images/logo.png" alt="Fashion Store Logo">
-            <p class="mt-4 text-sm text-gray-600 leading-relaxed">
+            <img class="w-40 h-auto block mx-auto" src="assests/images/logo.png" alt="Fashion Store Logo">
+            <p class="mt-4 text-md text-gray-600 leading-relaxed">
                 Modern style, timeless essentials. Curated pieces for every occasion.
             </p>
         </div>
 
         <div>
-            <h3 class="font-semibold mb-4">Shop</h3>
-            <ul class="space-y-2 text-sm text-gray-600">
+            <h3 class="font-bold mb-4">Shop</h3>
+            <ul class="space-y-2 text-md text-gray-600">
                 <li><a href="#" class="hover:text-black">Clothing</a></li>
                 <li><a href="#" class="hover:text-black">Shoes</a></li>
                 <li><a href="#" class="hover:text-black">Bags</a></li>
@@ -185,8 +113,8 @@
         </div>
 
         <div>
-            <h3 class="font-semibold mb-4">Customer Service</h3>
-            <ul class="space-y-2 text-sm text-gray-600">
+            <h3 class="font-bold mb-4">Customer Service</h3>
+            <ul class="space-y-2 text-md text-gray-600">
                 <li><a href="#" class="hover:text-black">Contact Us</a></li>
                 <li><a href="#" class="hover:text-black">Orders</a></li>
                 <li><a href="#" class="hover:text-black">Shipping & Delivery</a></li>
@@ -196,18 +124,25 @@
         </div>
 
         <div>
-            <h3 class="font-semibold mb-4">Follow Us</h3>
-            <ul class="space-y-2 text-sm text-gray-600">
-                <li><a href="#" class="hover:text-black">Instagram</a></li>
-                <li><a href="#" class="hover:text-black">Facebook</a></li>
-                <li><a href="#" class="hover:text-black">LinkedIn</a></li>
-            </ul>
+            <h3 class="font-bold mb-4">Follow Us</h3>
+            <div class="space-y-2 text-2xl text-olive-600">
+                <i class="fa-brands fa-instagram  transition-transform duration-200 hover:scale-120"></i>
+                <i class="fa-brands fa-facebook transition-transform duration-200 hover:scale-120"></i>
+                <i class="fa-brands fa-square-x-twitter transition-transform duration-200 hover:scale-120"></i>
+               <i class="fa-brands fa-linkedin transition-transform duration-200 hover:scale-120"></i>
+            </div>
         </div>
-
     </div>
     <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-gray-300 text-center">
     <p class="text-sm text-gray-500"> © 2026 Fashion Store. All rights reserved.</p>
     </div>
 </footer>
+
+  <script src="./js/header.js"></script>
+  <script src="./js/data.js"></script>
+  <script src="./js/products.js"></script>
+  <script src="./js/store.js"></script>
+  <script src="./js/app.js"></script>
+
 </body>
 </html>

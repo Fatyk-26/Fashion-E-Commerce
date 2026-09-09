@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="./src/output.css">
+ <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+ <title>Fashion-Store</title>
+
+</head>
+<body>
+    
+    
+<div id="header"></div>
+<div id="toast-container"  class="fixed top-24 left-1/2 -translate-x-1/2 z-[6000] flex flex-col gap-3">
+</div>
+
+<section class="p-18">
+
+<h2 class="text-center text-3xl p-12 font-semibold  ">Products Section</h2>
+
+<section class="flex border bg-olive-100 rounded-lg p-10 gap-10">
+
+    <!-- Filters -->
+    <aside class="w-56 shrink-0 ">
+     <h3 class="text-lg font-semibold mb-4">Filters</h3>
+
+     <div class="flex flex-col gap-2">
+        <h3 class="font-semibold mb-2">Category</h3>
+       
+        <label>
+            <input type="radio" name="category" value="Accessories">
+            Accessories
+        </label>
+
+        <label>
+            <input type="radio" name="category" value="Clothing">
+            Clothing
+        </label>
+
+        <label >
+            <input type="radio" name="category" value="Shoes"> 
+            Shoes
+        </label>
+
+        <label>
+            <input type="radio" name="category" value="Bags">
+            Bags
+        </label>
+     </div>
+
+
+ <div class="flex flex-col gap-2 pt-6">
+        <h3 class="font-semibold mb-2">Size</h3>
+       
+        <label>
+            <input type="checkbox" name="size" value="XS">
+            XS
+        </label>
+
+         <label>
+            <input type="checkbox" name="size" value="S">
+            S
+        </label>
+        
+         <label>
+            <input type="checkbox" name="size" value="M">
+            M
+        </label>
+
+         <label>
+            <input type="checkbox" name="size" value="L">
+            L
+        </label>
+
+         <label>
+            <input type="checkbox" name="size" value="XL">
+            XL
+        </label>
+     </div>
+
+<div class="mt-8">
+  <h3 class="font-semibold mb-2">Price</h3>
+  <div class="flex justify-between text-sm mb-4">
+    <span id="min-price-value">SAR 0</span>
+    <span id="max-price-value">SAR 1000</span>
+  </div>
+  <div class="relative h-5">
+    <div
+      class="absolute top-1/2 left-0 right-0 h-1 -translate-y-1/2 bg-gray-300 rounded-full"
+    ></div>
+
+    <div
+      id="price-track"
+      class="absolute top-1/2 h-1 -translate-y-1/2 bg-olive-800 rounded-full"
+    ></div>
+
+    <input
+      type="range"
+      id="min-price"
+      min="0"
+      max="1000"
+      value="0"
+      class="price-range absolute inset-0 w-full"
+    >
+
+    <input
+      type="range"
+      id="max-price"
+      min="0"
+      max="1000"
+      value="1000"
+      class="price-range absolute inset-0 w-full"
+    >
+  </div>
+</div>
+
+      <div class="flex flex-col gap-2 pt-6">
+        <h3 class="font-semibold mb-4">Brand</h3>
+       
+        <label>
+            <input type="checkbox" name="brand" value="Tommy Hilfiger">
+            Tommy Hilfiger
+        </label>
+
+         <label>
+            <input type="checkbox" name="brand" value="Calvin Klein">
+            Calvin Klein
+        </label>
+        
+         <label>
+            <input type="checkbox" name="brand" value="Michael Kors">
+            Michael Kors
+        </label>
+
+         <label>
+            <input type="checkbox" name="brand" value="Ralph Lauren">
+            Ralph Lauren
+        </label>
+     </div>
+
+
+<button type="button" id="clear-filters" class="bg-olive-800 px-6 py-1 mt-20 rounded-2xl block mx-auto text-white hover:opacity-85">
+  Clear Filters
+</button>
+    </aside>
+
+    <!-- Products -->
+  <div class="flex flex-col gap-6">
+    <div class="flex items-center gap-3">
+
+      <div class="flex-1">
+        <input type="text" id="search-products" placeholder="Search Products..." 
+        class="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-olive-600 "> 
+      </div>
+
+      <select  id="sort-products" class="border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-olive-600">
+       <option value="" selected class="">Sort by</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="name-a-z">Name: A to Z</option>
+        <option value="name-z-a">Name: Z to A</option>
+      </select> 
+    </div>
+
+<div id="featured-products"
+ class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+</div>
+</div>
+</section>
+</section>
+
+<script src="./js/header.js"></script>
+<script src="./js/data.js"></script>
+<script src="./js/products.js"></script>
+<script src="./js/store.js"></script>
+<script src="./js/shop.js"></script>
+
+
+</body>
+</html>
