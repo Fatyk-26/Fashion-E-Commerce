@@ -4,7 +4,9 @@ productContainer.innerHTML = products.map(product =>{
     return `
         <div class="border border-gray-300 rounded-2xl p-5 ">
         <div class="relative">
+        <a href="product-details.html?id=${product.id}">
         <img class="w-full h-72 object-cover " src="${product.image}" alt="${product.name}">
+        </a>
         <span data-id="${product.id}" class=" wishlist-btn absolute top-1 right-1 bg-white text-slate-900 rounded-full w-10 h-10 flex items-center justify-center shadow-sm hover:bg-olive-800 hover:text-white"><i class="fa-regular fa-heart"></i></span>
         </div>
         <span class="border border-gray-300 rounded-3xl text-xs px-3 bg-gray-300 font-semibold ">${product.category}</span>

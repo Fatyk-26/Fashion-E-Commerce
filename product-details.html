@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <title>Fashion-Store</title>
-
 </head>
 <body>
 
@@ -15,36 +14,77 @@
     <div id="toast-container"  class="fixed top-24 left-1/2 -translate-x-1/2 z-[6000] flex flex-col gap-3">
     </div>
 
-
-    <section class="flex gap-4 pt-22">
-
-        <div class="flex flex-col gap-2">
-            <img src="assests/images/accessories.png" alt="product-details" class="w-full h-20 object-cover ">
-            <img src="assests/images/accessories.png" alt="product-details" class="w-full h-20 object-cover ">
-            <img src="assests/images/accessories.png" alt="product-details" class="w-full h-20 object-cover ">
-            <img src="assests/images/accessories.png" alt="product-details" class="w-full h-20 object-cover ">
-            <img src="assests/images/accessories.png" alt="product-details" class="w-full h-20 object-cover ">
+<main class="pt-24">
+    <section class="flex gap-4 mx-10 p-5 rounded-xl border border-gray-200 shadow-md">
+        <div class="flex flex-col gap-2 pt-4  w-20 shrink-0">
+            <img src="" alt="" class="product-thumbnail w-full h-20 object-cover">
+            <img src="" alt="" class="product-thumbnail w-full h-20 object-cover">
+            <img src="" alt="" class="product-thumbnail w-full h-20 object-cover">
+            <img src="" alt="" class="product-thumbnail w-full h-20 object-cover">
+            <img src="" alt="" class="product-thumbnail w-full h-20 object-cover">
         </div>
-        <div class="">
-            <img src="assests/images/accessories.png" alt="product-details" class="w-full h-120 object-cover ">
+        <div class="relative w-120 shrink-0">
+
+        <img src="" alt="" class="product-main-image w-full h-130 object-contain ">
+        <button class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 border border-olive-200 bg-white rounded-full">
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+        </button>
+
+        <button class="absolute left-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 border border-olive-200 bg-white rounded-full">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+        </button>
         </div>
 
-
-        <div class=" flex flex-col gap-3 p-6">
-            <h3 class=" text-2xl ">Black Sunglasses</h3>
-            <span> 650 SAR</span>
-            
-
+        <div class=" flex flex-col gap-3 p-6 w-full ">
+            <div class="product-rating flex items-center gap-1 text-amber-400 text-sm"></div>
+            <h3 class=" text-2xl product-name"></h3>
+            <span class="product-price"></span>
+            <div class=" rounded-sm border text-olive-200 w-1/2 "></div>
+            <div class="flex justify-between w-1/2 pt-3">
+            <span class="rounded-xl bg-olive-200 px-3 text-xs w-20">Size:</span>
+            <span class="rounded-xl bg-olive-200 px-3 text-xs w-20">Size guide</span>
         </div>
 
+        <div class="product-sizes flex gap-3 pt-3"></div>
 
+        <div class=" rounded-sm border text-olive-200 w-1/2 "></div>
+            <span class="rounded-xl bg-olive-200 px-3 mt-3 text-xs w-20">Color:</span>
+        
+        <div class="product-colors flex gap-3 pt-3"></div>
 
+        <div class="flex gap-3 w-1/2 mt-1">
+        <button class="cart-btn flex-1 bg-olive-700 w-1/2 mt-5 px-1 py-2 rounded-2xl text-white hover:opacity-95" type="button">
+            <i class="fa-solid fa-cart-shopping mr-2"></i>Add to cart
+        </button>
+             <button  data-id="${currentProduct.id}"  class="wishlist-btn bg-olive-700 w-12 mt-5 px-1 py-2 rounded-2xl text-white hover:opacity-95" type="button">
+                <i class="fa-regular fa-heart"></i>
+            </button></div>
 
-
+        <div class=" flex flex-col pt-3 gap-4">
+            <h3 class="text-olive-600 text-sm font-semibold">PRODUCT DETAILS</h3>
+            <p class="product-description text-olive-600 text-sm leading-relaxed"></p>
+                 
+        </div>   
+        </div>
     </section>
 
-    
+    <section class="mx-10 my-10">
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-semibold">Related Products</h2>
+    </div>
+
+    <div
+        id="related-products"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 ">
+
+    </div>
+    </section>
+    </main>
 
 <script src="./js/header.js"></script>
+<script src="./js/data.js"></script>
+<script src="./js/products.js"></script>
+<script src="./js/store.js"></script>
+<script src="./js/product-details.js"></script>
 </body>
 </html>

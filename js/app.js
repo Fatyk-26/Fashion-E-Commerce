@@ -1,5 +1,6 @@
 const productContainer = document.querySelector("#featured-products")
-renderProducts(products , productContainer)
+const featuredProducts = products.slice(0, 6);
+renderProducts(featuredProducts , productContainer)
 initWishlistButtons();
 updateWishlistButtons();
 initCartButtons();

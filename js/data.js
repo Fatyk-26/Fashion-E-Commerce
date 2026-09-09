@@ -7,7 +7,29 @@ const products = [
     brand: "Tommy Hilfiger",
     price: 150 ,
     sizes: ["XS", "S", "M", "L", "XL"],
+    rating: 5,
     image: "assests/images/jacket-a.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
     }, 
 
      {
@@ -16,7 +38,29 @@ const products = [
     category: "Shoes",
     brand: "Michael Kors",
     price: 775,
+    rating: 4,
     image: "assests/images/shoes.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
     }, 
 
      {
@@ -25,7 +69,29 @@ const products = [
     category: "Bags",
     brand: "Michael Kors",
     price: 420,
+    rating: 5,
     image: "assests/images/bags.jpg",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
     }, 
 
      {
@@ -34,8 +100,30 @@ const products = [
     category: "Clothing",
     brand: "Ralph Lauren",
     price: 550,
+    rating: 3,
     sizes: ["XS", "S", "M", "L", "XL"],
     image: "assests/images/jacket-a.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
     }, 
 
      {
@@ -44,7 +132,29 @@ const products = [
     category: "Accessories",
     brand: "Calvin Klein",
     price: 650,
+    rating: 2,
     image: "assests/images/accessories.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
     }, 
 
      {
@@ -53,7 +163,411 @@ const products = [
     category: "Clothing",
     brand: "Tommy Hilfiger",
     price: 850,
+    rating: 4.5,
     sizes: ["XS", "S", "M", "L", "XL"],
     image: "assests/images/jacket-a.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
+    }, 
+
+      {
+    id: 7,
+    name: "Minimal Zip Jacket",
+    category: "Clothing",
+    brand: "Tommy Hilfiger",
+    price: 150 ,
+    rating: 1,
+    sizes: ["XS", "S", "M", "L", "XL"],
+    image: "assests/images/jacket-a.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
+    }, 
+
+     {
+    id: 8,
+    name: "Sport Shoes",
+    category: "Shoes",
+    brand: "Michael Kors",
+    price: 775,
+    rating: 5,
+    image: "assests/images/shoes.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
+    }, 
+
+     {
+    id: 9,
+    name: "Black Bags Collection",
+    category: "Bags",
+    brand: "Michael Kors",
+    price: 420,
+    rating: 4,
+    image: "assests/images/bags.jpg",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
+    }, 
+
+     {
+    id: 10,
+    name: "White Crop top ",
+    category: "Clothing",
+    brand: "Ralph Lauren",
+    price: 550,
+    rating: 3,
+    sizes: ["XS", "S", "M", "L", "XL"],
+    image: "assests/images/jacket-a.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
+    }, 
+
+     {
+    id: 11,
+    name: "Black Sunglasses",
+    category: "Accessories",
+    brand: "Calvin Klein",
+    price: 650,
+    rating: 2,
+    image: "assests/images/shoes.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
+    }, 
+
+     {
+    id: 12,
+    name: "Black Pant",
+    category: "Clothing",
+    brand: "Tommy Hilfiger",
+    price: 850,
+    rating: 3.5,
+    sizes: ["XS", "S", "M", "L", "XL"],
+    image: "assests/images/jacket-a.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
+    }, 
+
+      {
+    id: 13,
+    name: "Minimal Zip Jacket",
+    category: "Clothing",
+    brand: "Tommy Hilfiger",
+    price: 150 ,
+    rating: 2.5,
+    sizes: ["XS", "S", "M", "L", "XL"],
+    image: "assests/images/jacket-a.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
+    }, 
+
+     {
+    id: 14,
+    name: "Sport Shoes",
+    category: "Shoes",
+    brand: "Michael Kors",
+    price: 775,
+    rating: 3,
+    image: "assests/images/shoes.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
+    }, 
+
+     {
+    id: 15,
+    name: "Black Bags Collection",
+    category: "Bags",
+    brand: "Michael Kors",
+    price: 420,
+    rating: 1,
+    image: "assests/images/bags.jpg",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
+    }, 
+
+     {
+    id: 16,
+    name: "White Crop top ",
+    category: "Clothing",
+    brand: "Ralph Lauren",
+    price: 550,
+    rating: 5,
+    sizes: ["XS", "S", "M", "L", "XL"],
+    image: "assests/images/jacket-a.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
+    }, 
+
+     {
+    id: 17,
+    name: "Black Sunglasses",
+    category: "Accessories",
+    brand: "Calvin Klein",
+    price: 650,
+    rating: 1,
+    image: "assests/images/accessories.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png"
+      },
+    ]
+    }, 
+
+     {
+    id: 18,
+    name: "Black Pant",
+    category: "Clothing",
+    brand: "Tommy Hilfiger",
+    price: 850,
+    rating: 1.5,
+    sizes: ["XS", "S", "M", "L", "XL"],
+    image: "assests/images/jacket-a.png",
+    description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
+    colors: [
+      {
+        name: "red",
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
+      },
+      {
+        name: "black",
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
+      },
+      
+      {
+        name: "green",
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
+      },
+
+      {
+        name: "blue",
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
+      },
+    ]
     }, 
 ]

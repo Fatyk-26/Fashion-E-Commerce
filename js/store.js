@@ -6,13 +6,15 @@ const wishListBtn = document.querySelectorAll(".wishlist-btn")
 wishListBtn.forEach(item =>{
     item.addEventListener("click", ()=>{
     const productId = Number(item.dataset.id)
-    const product = products.find (
-        product => product.id == productId
-    )
+   const product = products.find(
+    product => product.id === productId
+);
+
+if (!product) return;
    
-    const exist = wishlist.some (
-        productItem => productItem.id == productId
-    )
+    const exist = wishlist.some(
+    productItem => productItem?.id === productId
+);
 
  const heartIcon = item.querySelector("i");
 

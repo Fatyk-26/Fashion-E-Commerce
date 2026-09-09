@@ -1,10 +1,10 @@
 
-const productContainer = document.querySelector("#featured-products")
-renderProducts(products , productContainer)
-initWishlistButtons();
-updateWishlistButtons();
-initCartButtons();
-updateCartButtons();
+const productContainer = document.querySelector("#shop-products")
+const pagination = document.querySelector("#pagination");
+
+const productsPerPage = 6;
+let currentPage = 1;
+
 
 const filteredCategory = document.querySelectorAll(
     'input[name="category"]'
@@ -92,28 +92,33 @@ function applyFilters() {
         filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
     }
 
-    renderProducts(filteredProducts, productContainer)
-    initWishlistButtons();
-    updateWishlistButtons();
-    initCartButtons();
-    updateCartButtons();
+    const startIndex = (currentPage - 1) * productsPerPage;
+    const endIndex = startIndex + productsPerPage;
+    const productsToShow = filteredProducts.slice(startIndex, endIndex);
+    renderProducts(productsToShow, productContainer);
+    renderPagination(filteredProducts.length);
+
+initWishlistButtons();
+updateWishlistButtons();
+initCartButtons();
+updateCartButtons();
     }
 
-sortProducts.addEventListener("change", applyFilters)
+sortProducts.addEventListener("change", resetPagination)
 
-searchInput.addEventListener("input", applyFilters)
+searchInput.addEventListener("input", resetPagination)
 
 
 filteredCategory.forEach(filter =>
-    filter.addEventListener("change", applyFilters)
+    filter.addEventListener("change", resetPagination)
 )
 
 filteredSize.forEach(filter=>{
-    filter.addEventListener("change", applyFilters)
+    filter.addEventListener("change", resetPagination)
 })
 
 filteredBrand.forEach(filter=>
-    filter.addEventListener("change", applyFilters)
+    filter.addEventListener("change", resetPagination)
 )
 
 window.addEventListener("load", () => {
@@ -161,11 +166,11 @@ priceTrack.style.width = `${maxPercent - minPercent}%`
 
 minPrice.addEventListener("input", ()=>{
    updatePriceSlider ()
-   applyFilters()
+   resetPagination()
 })
 maxPrice.addEventListener("input",()=>{
 updatePriceSlider ()
-   applyFilters()
+   resetPagination()
 })
 
 updatePriceSlider();
@@ -183,15 +188,79 @@ minPrice.value = minPrice.min;
   sortProducts.value = ""
   searchInput.value = ""
   updatePriceSlider();
-  applyFilters();
+  currentPage = 1;
+applyFilters();
 
 })
 
 
+function renderPagination(totalProducts) {
+
+    const totalPages = Math.ceil(totalProducts / productsPerPage);
+
+    pagination.innerHTML = "";
+
+    if (totalPages <= 1) return;
+
+    // Previous
+    const previousButton = document.createElement("button");
+
+    previousButton.innerHTML = `<i class="fa-solid fa-chevron-left"></i>`;
+
+    previousButton.disabled = currentPage === 1;
+
+    previousButton.addEventListener("click", () => {
+        currentPage--;
+        applyFilters();
+    });
+
+    pagination.appendChild(previousButton);
 
 
+    // Page numbers
+    for (let page = 1; page <= totalPages; page++) {
+
+        const pageButton = document.createElement("button");
+
+        pageButton.textContent = page;
+
+        pageButton.className =
+            "w-8 h-8 rounded-full border border-gray-300";
+
+        if (page === currentPage) {
+            pageButton.classList.add("bg-olive-800", "text-white");
+        }
+
+        pageButton.addEventListener("click", () => {
+            currentPage = page;
+            applyFilters();
+        });
+
+        pagination.appendChild(pageButton);
+    }
 
 
+    // Next
+    const nextButton = document.createElement("button");
+
+    nextButton.innerHTML =
+        `<i class="fa-solid fa-chevron-right"></i>`;
+
+    nextButton.disabled = currentPage === totalPages;
+
+    nextButton.addEventListener("click", () => {
+        currentPage++;
+        applyFilters();
+    });
+
+    pagination.appendChild(nextButton);
+}
+
+
+function resetPagination() {
+    currentPage = 1;
+    applyFilters();
+}
 
 
 

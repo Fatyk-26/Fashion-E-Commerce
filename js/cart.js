@@ -4,10 +4,23 @@ cartMain.innerHTML = cart.map (product =>{
    return `
     <div class="cart-card grid grid-cols-1 md:grid-cols-4 gap-4 items-center border-b border-gray-200 py-3">
         <div class="flex items-center gap-3">
-            <img src="${product.image}" alt="${product.name}" class="w-20 h-20 object-contain rounded-xl"
-            >
-            <h3 class="font-semibold text-slate-900 "> ${product.name} </h3>
+    <img 
+        src="${product.image}" 
+        alt="${product.name}" 
+        class="w-20 h-20 object-contain rounded-xl"
+    >
+
+    <div class="flex flex-col">
+        <h3 class="font-semibold text-slate-900">
+            ${product.name}
+        </h3>
+
+        <div class="flex flex-col gap-2 text-xs text-gray-500 mt-1">
+            <span>Color: ${product.color || "Not selected"}</span>
+<span>Size: ${product.size || "Not selected"}</span>
         </div>
+    </div>
+</div>
 
      
         <p class="text-sm text-olive-600 font-semibold"> ${product.price} SAR
