@@ -13,21 +13,25 @@ const products = [
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -38,27 +42,32 @@ const products = [
     category: "Shoes",
     brand: "Michael Kors",
     price: 775,
+    sizes: ["36", "37", "38", "39", "41"],
     rating: 4,
     image: "assests/images/shoes.png",
     description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -75,21 +84,25 @@ const products = [
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -107,21 +120,25 @@ const products = [
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -138,21 +155,25 @@ const products = [
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -163,28 +184,32 @@ const products = [
     category: "Clothing",
     brand: "Tommy Hilfiger",
     price: 850,
-    rating: 4.5,
+    rating: 4,
     sizes: ["XS", "S", "M", "L", "XL"],
     image: "assests/images/jacket-a.png",
     description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -202,21 +227,25 @@ const products = [
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -227,27 +256,32 @@ const products = [
     category: "Shoes",
     brand: "Michael Kors",
     price: 775,
+    sizes: ["36", "37", "38", "39", "41"],
     rating: 5,
     image: "assests/images/shoes.png",
     description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -264,21 +298,25 @@ const products = [
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -296,21 +334,25 @@ const products = [
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -327,21 +369,25 @@ const products = [
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -352,28 +398,32 @@ const products = [
     category: "Clothing",
     brand: "Tommy Hilfiger",
     price: 850,
-    rating: 3.5,
+    rating: 3,
     sizes: ["XS", "S", "M", "L", "XL"],
     image: "assests/images/jacket-a.png",
     description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -384,28 +434,32 @@ const products = [
     category: "Clothing",
     brand: "Tommy Hilfiger",
     price: 150 ,
-    rating: 2.5,
+    rating: 2,
     sizes: ["XS", "S", "M", "L", "XL"],
     image: "assests/images/jacket-a.png",
     description: "A stylish and timeless pair of sunglasses designed to elevate any look.",
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -415,6 +469,7 @@ const products = [
     name: "Sport Shoes",
     category: "Shoes",
     brand: "Michael Kors",
+    sizes: ["36", "37", "38", "39", "41"],
     price: 775,
     rating: 3,
     image: "assests/images/shoes.png",
@@ -422,21 +477,25 @@ const products = [
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -453,21 +512,25 @@ const products = [
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -485,21 +548,25 @@ const products = [
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -516,21 +583,25 @@ const products = [
     colors: [
       {
         name: "red",
-        image: "assests/images/shoes.png"
+        image: "assests/images/shoes.png",
+        class: "bg-red-400"
       },
       {
         name: "black",
-        image: "assests/images/bags.jpg"
+        image: "assests/images/bags.jpg",
+         class: "bg-olive-400"
       },
       
       {
         name: "green",
-        image: "assests/images/jacket-a.png"
+        image: "assests/images/jacket-a.png",
+         class: "bg-lime-400"
       },
 
       {
         name: "blue",
-        image: "assests/images/accessories.png"
+        image: "assests/images/accessories.png",
+         class: "bg-sky-400"
       },
     ]
     }, 
@@ -541,7 +612,7 @@ const products = [
     category: "Clothing",
     brand: "Tommy Hilfiger",
     price: 850,
-    rating: 1.5,
+    rating: 1,
     sizes: ["XS", "S", "M", "L", "XL"],
     image: "assests/images/jacket-a.png",
     description: "A stylish and timeless pair of sunglasses designed to elevate any look.",

@@ -1,5 +1,15 @@
 
 const cartMain = document.querySelector("#cart-products")
+const cartEmpty = document.querySelector("#cart-empty")
+
+function updateCartEmptyState() {
+    if (cart.length === 0) {
+        cartEmpty.classList.remove("hidden");
+    } else {
+        cartEmpty.classList.add("hidden");
+    }
+}
+updateCartEmptyState()
 cartMain.innerHTML = cart.map (product =>{
    return `
     <div class="cart-card grid grid-cols-1 md:grid-cols-4 gap-4 items-center border-b border-gray-200 py-3">
@@ -16,8 +26,8 @@ cartMain.innerHTML = cart.map (product =>{
         </h3>
 
         <div class="flex flex-col gap-2 text-xs text-gray-500 mt-1">
-            <span>Color: ${product.color || "Not selected"}</span>
-<span>Size: ${product.size || "Not selected"}</span>
+            <span>Color: ${product.color || ""}</span>
+            ${product.size ? `<span>Size: ${product.size}</span>` : ""}
         </div>
     </div>
 </div>
@@ -46,7 +56,7 @@ cartMain.innerHTML = cart.map (product =>{
             <p class="subtotal-section text-sm font-semibold"> ${product.price * product.quantity} SAR
             </p>
 
-            <button data-id="${product.id}" class="removeCart-btn text-slate-500 hover:text-red-600 transition-colors"
+            <button data-cart-id="${product.cartId}" class="removeCart-btn text-slate-500 hover:text-red-600 transition-colors"
                 type="button"  aria-label="Remove ${product.name} from cart">
                 <i class="fa-regular fa-trash-can"></i>
             </button>
@@ -60,15 +70,16 @@ updateCartTotal();
 const removeCart = document.querySelectorAll(".removeCart-btn")
 removeCart.forEach(button =>{
     button.addEventListener("click", ()=>{
-        const cartId = Number(button.dataset.id)
-        cart = cart.filter(product => product.id !== cartId)
+       const cartId = button.dataset.cartId
+       cart = cart.filter(product => product.cartId !== cartId)
         console.log(cart)
         localStorage.setItem("cart", JSON.stringify(cart))
         button.closest(".cart-card").remove();
-        showToast("Item removed from cart", "remove")
-        updateHeaderCounts();
-        updateCartTotal();
 
+showToast("Item removed from cart", "remove");
+updateHeaderCounts();
+updateCartTotal();
+updateCartEmptyState();
     })
 })
 

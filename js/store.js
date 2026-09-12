@@ -112,6 +112,8 @@ cartContainer.forEach(button =>{
         const cartItem = products.find(
           cartItem => cartItem.id === cartId  
         ) 
+
+        if (!cartItem) return;
     
     const cartExist = cart.some(
         cartProduct => cartProduct.id === cartId

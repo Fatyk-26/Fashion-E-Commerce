@@ -15,8 +15,25 @@
       </div>
 
 <section class="pt-20">
+   
     <h2 class="text-center text-3xl p-12 font-semibold">Wishlist Products</h2>
+     <div class="flex justify-center mb-6">
+    <button
+        id="remove-all-wishlist"
+        class="border border-gray-300 text-gray-600 px-4 py-2  rounded-full text-sm
+               hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition">
+        <i class="fa-regular fa-trash-can mr-2"></i>
+        Remove All
+    </button>
+</div>
     <div id="wishlist-products" class=" grid grid-cols-4 rounded-md gap-6 px-6 " ></div>
+    <div id="wishlist-empty" class="hidden text-center py-15">
+    <i class="fa-regular fa-heart text-4xl text-gray-700 "></i> 
+    <p class="text-xl font-semibold mt-4">Your whishlist is empty</p>
+    <p class="text-sm text-gray-500 mt-2">
+       Add items you love to your wishlist!
+    </p>
+</div>
 </section>  
 <script src="./js/header.js"></script>
 <script src="./js/data.js"></script>

@@ -13,7 +13,7 @@
  <div id="toast-container"  class="fixed top-24 left-1/2 -translate-x-1/2 z-[6000] flex flex-col gap-3"></div>
 <section class="pt-20">
     <h2 class="text-center text-3xl p-12 font-semibold">Shopping Cart</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
         <div class="lg:col-span-2">
        
             <div class="hidden md:grid grid-cols-4 gap-4 border-b border-gray-200 pb-3 mb-4 text-sm font-semibold text-gray-500">
@@ -23,6 +23,13 @@
                 <p>Subtotal</p>
             </div>
             <div id="cart-products" class="flex flex-col gap-4"></div>
+            <div id="cart-empty" class="hidden text-center py-20">
+    <i class="fa-solid fa-cart-shopping text-4xl text-gray-700 pt-3"></i>
+    <p class="text-xl font-semibold mt-4">Your cart is empty</p>
+    <p class="text-sm text-gray-500 mt-2">
+        Add some products to your cart.
+    </p>
+</div>
         </div>
 
         <aside class="border border-gray-200 rounded-2xl p-6 h-fit">

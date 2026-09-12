@@ -1,10 +1,16 @@
 const productContainer = document.querySelector("#featured-products")
 const featuredProducts = products.slice(0, 6);
+
 renderProducts(featuredProducts , productContainer)
+
+const cartButtons = productContainer.querySelectorAll(".cart-btn");
+
+cartButtons.forEach(button => {
+    button.remove();
+});
 initWishlistButtons();
 updateWishlistButtons();
-initCartButtons();
-updateCartButtons();
+
 
 
 let subscribers = JSON.parse(localStorage.getItem("subscribers")) || []

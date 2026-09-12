@@ -7,15 +7,18 @@ const productRating = document.querySelector(".product-rating");
 const productMainImage = document.querySelector(".product-main-image");
 const productThumbnails = document.querySelectorAll(".product-thumbnail");
 const productSizes = document.querySelector(".product-sizes");
+const parentSize = document.querySelector(".parent-size")
+const sizeLine = document.querySelector(".size-line")
 const productColors = document.querySelector(".product-colors");
 const productDescription = document.querySelector(".product-description");
-
-
-
+const productSizeField = document.querySelector(".product-size-field");
+const productColorField = document.querySelector(".product-color-field");
+const sizeGuideLink = document.querySelector(".size-guide-link")
 
 if(currentProduct){
+    renderRating(currentProduct.rating, productRating);
     const wishlistBtn = document.querySelector(".wishlist-btn");
-wishlistBtn.dataset.id = currentProduct.id;
+    wishlistBtn.dataset.id = currentProduct.id;
     productName.textContent = currentProduct.name;
     productPrice.textContent = `${currentProduct.price} SAR`
 
@@ -24,34 +27,26 @@ wishlistBtn.dataset.id = currentProduct.id;
 
     productDescription.textContent = currentProduct.description;
 
-    productRating.innerHTML = ""
-
-    for(let i= 1 ; i<= 5 ; i++){
-        const star = document.createElement("i")
-
-        if(i <= currentProduct.rating){
-             star.className = "fa-solid fa-star";
-        } else {
-           star.className = "fa-regular fa-star";
-        }
-
-        productRating.appendChild(star)
-    }
-
     let selectedSize = null;
     productSizes.innerHTML ="";
 
-    if(currentProduct.sizes){
-        currentProduct.sizes.forEach(size =>{
-            const sizeButton = document.createElement("button")
-             sizeButton.textContent = size;
-             sizeButton.className =
-              "flex border border-olive-400 rounded-full w-8 h-8 text-sm items-center justify-center hover:bg-olive-200";
-              productSizes.appendChild(sizeButton);
-        })
-    }
+    if (currentProduct.sizes && currentProduct.sizes.length > 0) {
+    currentProduct.sizes.forEach(size => {
+        const sizeButton = document.createElement("button");
 
-    const sizeButtons = document.querySelectorAll(".product-sizes button");
+        sizeButton.textContent = size;
+        sizeButton.className =
+            "flex border border-olive-400 rounded-full w-8 h-8 text-sm items-center justify-center hover:bg-olive-200";
+
+        productSizes.appendChild(sizeButton);
+    });
+} else {
+    sizeLine.style.display= "none";
+    parentSize.style.display= "none";
+    productSizes.style.display = "none";
+}
+
+const sizeButtons = document.querySelectorAll(".product-sizes button");
 
 sizeButtons.forEach(button => {
     button.addEventListener("click", () => {
@@ -62,6 +57,7 @@ sizeButtons.forEach(button => {
         button.classList.add("bg-olive-800", "text-white");
 
         selectedSize = button.textContent;
+        productSizeField.innerHTML = `Size: ${selectedSize}`
     });
 });
 
@@ -97,6 +93,8 @@ colorButtons.forEach(button => {
 
         productMainImage.src = image;
          selectedColor = color;
+         productColorField.innerHTML = `Color: ${selectedColor}`
+        
     });
 });
 
@@ -116,40 +114,53 @@ const cartBtn = document.querySelector(".cart-btn");
 
 cartBtn.addEventListener("click", () => {
 
-    if (!selectedSize || !selectedColor) {
-        showToast("Please select size and color", "remove");
+
+    if (!selectedColor) {
+        showToast("Please select color", "remove");
         return;
     }
 
-   const cartExist = cart.some(
+    if ( currentProduct.sizes && currentProduct.sizes.length > 0 && !selectedSize){
+        showToast("Please select size ", "remove");
+        return;
+    }
+
+   const cartExist = cart.find(
     item =>
         item.id === currentProduct.id &&
         item.size === selectedSize &&
         item.color === selectedColor
 );
-
     if (!cartExist) {
 
         cart.push({
             ...currentProduct,
+            cartId: `${currentProduct.id}-${selectedSize || ""}-${selectedColor || ""}`,
             size: selectedSize,
             color: selectedColor,
             quantity: 1
         });
+}
+         else{
+       cartExist.quantity += 1 
+    }
 
         localStorage.setItem("cart", JSON.stringify(cart));
-
         updateHeaderCounts();
         showToast("Added to cart");
-
         cartBtn.textContent = "Added to Cart";
         cartBtn.classList.remove("bg-olive-800");
         cartBtn.classList.add("bg-olive-500");
-    }
+        
 });
 
-
+sizeGuideLink.href = `guide.html?type=${currentProduct.category.toLowerCase()}`;
+console.log(sizeGuideLink.href);
 }
+
+
+
+
 
 
 initWishlistButtons();
