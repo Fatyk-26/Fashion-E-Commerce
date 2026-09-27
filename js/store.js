@@ -5,21 +5,33 @@ function initWishlistButtons() {
 const wishListBtn = document.querySelectorAll(".wishlist-btn")
 wishListBtn.forEach(item =>{
     item.addEventListener("click", ()=>{
-    const productId = Number(item.dataset.id)
+    const productId = Number(item.dataset.id);
+    const color = item.dataset.color;
    const product = products.find(
     product => product.id === productId
 );
 
 if (!product) return;
-   
     const exist = wishlist.some(
-    productItem => productItem?.id === productId
+    productItem => productItem?.id === productId &&
+    productItem?.color === color
 );
 
  const heartIcon = item.querySelector("i");
 
     if (!exist){
-        wishlist.push(product);
+        const selectedColor = product.colors.find(
+            productColor => productColor.name === color,
+            
+        )
+
+        console.log(productId, color);
+        wishlist.push({
+            ...product,
+            color: color,
+            image: selectedColor.image
+
+        });
         heartIcon.classList.remove("fa-regular");
         heartIcon.classList.add("fa-solid");
         showToast("Added to wishlist")
@@ -30,7 +42,8 @@ if (!product) return;
     else{
 
     wishlist = wishlist.filter (
-        product => product.id !== productId
+        product => product.id !== productId ||
+        product.color !== color
     )
 
     heartIcon.classList.remove("fa-solid")
@@ -49,10 +62,13 @@ const wishlistButtons = document.querySelectorAll(".wishlist-btn")
 
 wishlistButtons.forEach(button =>{
     const productID = Number(button.dataset.id)
+     const color = button.dataset.color;
     const heartIcon = button.querySelector("i")
 
     const exist = wishlist.some(
-        product => product.id === productID
+        product => product.id === productID &&
+        product.color === color
+
     )
 
     if (exist){
@@ -69,9 +85,8 @@ wishlistButtons.forEach(button =>{
 
 }
 
-
-
 const toastContainer = document.querySelector("#toast-container")
+console.log(toastContainer);
 function showToast(message, type ="add", duration = 2000) {
 const toast = document.createElement("div")
 toast.classList.add(
@@ -128,8 +143,8 @@ cartContainer.forEach(button =>{
         updateHeaderCounts(); 
         showToast("Added to cart")
         button.textContent = "Added to Cart ";
-button.classList.remove("bg-olive-800");
-button.classList.add("bg-olive-500");  
+        button.classList.remove("bg-olive-800");
+        button.classList.add("bg-olive-500");  
     }
 })
 })

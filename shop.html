@@ -19,7 +19,7 @@
 
 <h2 class="text-center text-3xl p-12 font-semibold  ">Products Section</h2>
 
-<section class="flex border bg-olive-100 rounded-lg p-10 gap-10">
+<section class="flex border border-olive-300 bg-stone-50 rounded-lg p-10 gap-10">
     <aside class="w-56 shrink-0 ">
      <h3 class="text-lg font-semibold mb-4">Filters</h3>
 
@@ -127,13 +127,13 @@
         </label>
         
          <label>
-            <input type="checkbox" name="brand" value="Michael Kors">
-            Michael Kors
+            <input type="checkbox" name="brand" value="Adidas">
+            Adidas
         </label>
 
          <label>
-            <input type="checkbox" name="brand" value="Ralph Lauren">
-            Ralph Lauren
+            <input type="checkbox" name="brand" value="Guess">
+            Guess
         </label>
      </div>
 
@@ -143,7 +143,7 @@
 </button>
     </aside>
 
-  <div class="flex flex-col gap-6">
+  <div class="flex-1 flex flex-col gap-6">
     <div class="flex items-center gap-3">
 
       <div class="flex-1">
@@ -158,21 +158,34 @@
         <option value="name-a-z">Name: A to Z</option>
         <option value="name-z-a">Name: Z to A</option>
       </select> 
+      </div>
+
+      <div class="flex-1 flex flex-col gap-6">
+      <div id="shop-products"
+      class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 min-h-96">
+      </div>
+
+      <div id="no-products" class="hidden flex-col items-center justify-center min-h-96 text-center">
+          <i class="fa-solid fa-magnifying-glass text-4xl text-gray-400 mb-4"></i>
+
+          <p class="text-xl font-semibold text-gray-700">
+              No products found
+          </p>
+
+          <p class="text-sm text-gray-500 mt-2">
+              Try changing the filters or search term.
+          </p>
+      </div>
+      </div>
+
+      <div id="pagination" class="flex justify-center items-center gap-2 mt-10">
+      </div> 
     </div>
-
-<div id="shop-products"
- class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-</div>
-
-<div id="pagination" class="flex justify-center items-center gap-2 mt-10">
-</div>
-</div>
 
 
 <div class="product-modal hidden fixed inset-0 z-50 flex items-center justify-center bg-black/40">
 
     <div class="bg-white rounded-2xl p-6 w-80 relative">
-
         <i class="fa-solid fa-xmark text-xl cursor-pointer absolute top-4 right-4"></i>
          <p class="select-size text-sm font-semibold">Select Size</p>
         <div class="product-sizes flex gap-1 p-3"></div>

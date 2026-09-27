@@ -9,19 +9,22 @@ function updateCartEmptyState() {
         cartEmpty.classList.add("hidden");
     }
 }
+
 updateCartEmptyState()
 cartMain.innerHTML = cart.map (product =>{
    return `
     <div class="cart-card grid grid-cols-1 md:grid-cols-4 gap-4 items-center border-b border-gray-200 py-3">
         <div class="flex items-center gap-3">
-    <img 
+        <div class="w-28 h-24 shrink-0 flex items-center justify-center overflow-hidden rounded-xl">
+    <a href="product-details.html?id=${product.id}" >
+        <img 
         src="${product.image}" 
         alt="${product.name}" 
-        class="w-20 h-20 object-contain rounded-xl"
-    >
-
-    <div class="flex flex-col">
-        <h3 class="font-semibold text-slate-900">
+        class="w-full h-full object-contain">
+    </a>
+    </div>
+    <div class="min-w-0">
+        <h3 class="font-semibold text-slate-900 truncate">
             ${product.name}
         </h3>
 
@@ -32,7 +35,6 @@ cartMain.innerHTML = cart.map (product =>{
     </div>
 </div>
 
-     
         <p class="text-sm text-olive-600 font-semibold"> ${product.price} SAR
         </p>
 
@@ -72,7 +74,6 @@ removeCart.forEach(button =>{
     button.addEventListener("click", ()=>{
        const cartId = button.dataset.cartId
        cart = cart.filter(product => product.cartId !== cartId)
-        console.log(cart)
         localStorage.setItem("cart", JSON.stringify(cart))
         button.closest(".cart-card").remove();
 

@@ -24,15 +24,7 @@
             <img src="" alt="" class="product-thumbnail w-full h-20 object-cover">
         </div>
         <div class="relative w-120 shrink-0">
-
-        <img src="" alt="" class="product-main-image w-full h-130 object-contain ">
-        <button class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 border border-olive-200 bg-white rounded-full">
-            <i class="fa-solid fa-chevron-right text-xs"></i>
-        </button>
-
-        <button class="absolute left-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 border border-olive-200 bg-white rounded-full">
-            <i class="fa-solid fa-chevron-left text-xs"></i>
-        </button>
+        <img src="" alt="" class="product-main-image w-full h-130 object-cover border border-olive-100 rounded-lg  ">
         </div>
 
         <div class=" flex flex-col gap-3 p-6 w-full ">
@@ -48,7 +40,7 @@
         <div class="product-sizes flex gap-3 pt-3"></div>
 
         <div class=" rounded-sm border text-olive-200 w-1/2 "></div>
-            <span class=" product-color-field rounded-xl bg-olive-200 px-3 mt-3 text-xs w-23">Color:</span>
+            <span class=" product-color-field rounded-xl bg-olive-200 px-3 mt-3 text-xs w-33">Color:</span>
         
         <div class="product-colors flex gap-3 pt-3"></div>
 
@@ -60,11 +52,45 @@
                 <i class="fa-regular fa-heart"></i>
             </button></div>
 
-        <div class=" flex flex-col pt-3 gap-4">
-            <h3 class="text-olive-600 text-sm font-semibold">PRODUCT DETAILS</h3>
-            <p class="product-description text-olive-600 text-sm leading-relaxed"></p>
-                 
-        </div>   
+        <div class="product-highlights-header flex items-center justify-between cursor-pointer">
+           <h3 class="text-olive-600 text-sm font-semibold">PRODUCT HIGHLIGHTS</h3>
+        <i class="fa-solid fa-chevron-up product-highlights-arrow"></i>
+        </div>
+
+        <div class="product-highlights-content">
+         <p class="product-description text-olive-600 text-sm leading-relaxed whitespace-pre-line"></p>
+        </div>    
+      
+
+        <div class="product-details-header flex items-center justify-between cursor-pointer">
+         <h3 class="text-olive-600 text-sm font-semibold">PRODUCT DETAILS</h3>
+         <i class="fa-solid fa-chevron-up product-details-arrow"></i>
+</div>
+<div class="product-details-content">
+       <table class="w-full border-collapse border border-gray-300 rounded-xl overflow-hidden bg-olive-100">
+    <tbody>
+        <tr>
+            <td class="border border-gray-300 px-4 py-3 font-semibold">Country of Origin</td>
+            <td id="details-origin" class="border border-gray-300 px-4 py-3"></td>
+        </tr>
+
+          <tr>
+            <td class="border border-gray-300 px-4 py-3 font-semibold">Model Name</td>
+            <td id="details-model" class="border border-gray-300 px-4 py-3"></td>
+        </tr>
+
+        <tr>
+            <td class="border border-gray-300 px-4 py-3 font-semibold">Color</td>
+            <td id="details-color" class="border border-gray-300 px-4 py-3"></td>
+        </tr>
+
+        <tr>
+            <td class="border border-gray-300 px-4 py-3 font-semibold">Gender</td>
+            <td id="details-gender" class="border border-gray-300 px-4 py-3"></td>
+        </tr>
+    </tbody>
+</table>
+</div>
         </div>
     </section>
 
@@ -73,11 +99,26 @@
         <h2 class="text-2xl font-semibold">Related Products</h2>
     </div>
 
-    <div
-        id="related-products"
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 ">
+    <div class="flex items-center gap-4">
 
+    <button
+    id="related-prev"
+    type="button"
+    class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-olive-800 hover:text-white">
+    <i class="fa-solid fa-chevron-left text-xs"></i>
+</button>
+
+    <div id="related-products" class="flex gap-5 overflow-hidden">
     </div>
+
+    <button
+    id="related-next"
+    type="button"
+    class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-olive-800 hover:text-white">
+    <i class="fa-solid fa-chevron-right text-xs"></i>
+</button>
+
+</div>
     </section>
     </main>
 

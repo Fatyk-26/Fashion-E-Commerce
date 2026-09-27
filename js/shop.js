@@ -7,6 +7,10 @@ const modalColors = productModal.querySelector(".product-colors");
 const modalClose = productModal.querySelector(".fa-xmark");
 const modalCartBtn = productModal.querySelector(".cart-btn");
 const sizeTitle = document.querySelector(".select-size")
+const noProducts = document.querySelector("#no-products");
+
+const params = new URLSearchParams(window.location.search);
+const category = params.get("category");
 
 const productsPerPage = 6;
 let currentPage = 1;
@@ -75,8 +79,6 @@ function applyFilters() {
         product.category.toLowerCase().includes(searchValue) ||
         product.brand.toLowerCase().includes(searchValue)
 
-     
-
         return categoryMatch && sizeMatch && priceMatch && brandMatch && searchMatch;
     })
 
@@ -98,21 +100,33 @@ function applyFilters() {
         filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
     }
 
+
+  if (filteredProducts.length === 0) {
+    noProducts.classList.remove("hidden");
+    noProducts.classList.add("flex");
+    productContainer.classList.add("hidden");
+    pagination.innerHTML = "";
+
+    return;
+}
+
     const startIndex = (currentPage - 1) * productsPerPage;
     const endIndex = startIndex + productsPerPage;
     const productsToShow = filteredProducts.slice(startIndex, endIndex);
+
+    noProducts.classList.add("hidden");
+    noProducts.classList.remove("flex");
+    productContainer.classList.remove("hidden");
+
     renderProducts(productsToShow, productContainer);
 
-
     const productButton = document.querySelectorAll("#shop-products .cart-btn")
-    
     let product = null;
-let selectedSize = null;
-let selectedColor = null;
+    let selectedSize = null;
+    let selectedColor = null;
 
     productButton.forEach(button =>{
         button.addEventListener("click" , ()=>{
-
         const productId = Number(button.dataset.id);
 
          product = products.find(
@@ -124,6 +138,8 @@ let selectedColor = null;
 
         productModal.classList.remove("hidden")
         modalSizes.textContent = "";
+        modalSizes.style.display = "";
+        sizeTitle.classList.remove("hidden");
 
         if(product.sizes && product.sizes.length > 0){
 
@@ -226,9 +242,14 @@ modalCartBtn.addEventListener("click" , ()=>{
     }
 
     else{
+        
+        const selectedColorData = product.colors.find(
+    color => color.name === selectedColor
+);
         cart.push({
             ...product,
             cartId: `${product.id}-${selectedSize || ""}-${selectedColor || ""}`,
+            image: selectedColorData.image,
             size: selectedSize,
             color: selectedColor,
             quantity: 1
@@ -238,6 +259,7 @@ modalCartBtn.addEventListener("click" , ()=>{
     localStorage.setItem("cart", JSON.stringify(cart));
     updateHeaderCounts();
     showToast("Added to cart");
+    updateCartButtons();
     productModal.classList.add("hidden");
 })
 
@@ -245,7 +267,6 @@ modalCartBtn.addEventListener("click" , ()=>{
     initWishlistButtons();
     updateWishlistButtons();
     updateCartButtons();
-
     }
 
     sortProducts.addEventListener("change", resetPagination)
@@ -268,6 +289,16 @@ modalCartBtn.addEventListener("click" , ()=>{
         .forEach(input => {
         input.checked = false;
         });
+
+        if (category) {
+        const categoryRadio = document.querySelector(
+            `input[name="category"][value="${category}"]`
+        );
+
+        if (categoryRadio) {
+            categoryRadio.checked = true;
+        }
+    }
 
         minPrice.value = minPrice.min;
     maxPrice.value = maxPrice.max;
@@ -337,16 +368,14 @@ modalCartBtn.addEventListener("click" , ()=>{
 
 
     function renderPagination(totalProducts) {
-
         const totalPages = Math.ceil(totalProducts / productsPerPage);
 
         pagination.innerHTML = "";
 
         if (totalPages <= 1) return;
 
-        // Previous
-        const previousButton = document.createElement("button");
 
+        const previousButton = document.createElement("button");
         previousButton.innerHTML = `<i class="fa-solid fa-chevron-left"></i>`;
 
         previousButton.disabled = currentPage === 1;
@@ -358,8 +387,6 @@ modalCartBtn.addEventListener("click" , ()=>{
 
         pagination.appendChild(previousButton);
 
-
-        // Page numbers
         for (let page = 1; page <= totalPages; page++) {
 
             const pageButton = document.createElement("button");
@@ -381,10 +408,7 @@ modalCartBtn.addEventListener("click" , ()=>{
             pagination.appendChild(pageButton);
         }
 
-
-        // Next
         const nextButton = document.createElement("button");
-
         nextButton.innerHTML =
             `<i class="fa-solid fa-chevron-right"></i>`;
 

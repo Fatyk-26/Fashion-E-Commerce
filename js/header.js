@@ -1,5 +1,4 @@
 const header = document.querySelector("#header");
-
 fetch("./header.html")
     .then(response => response.text())
     .then(data => {
@@ -56,25 +55,20 @@ function searchFieldHeader(){
                 `<div
                     class="search-result px-3 py-2 hover:bg-gray-100 cursor-pointer flex gap-2 items-center "
                      data-id="${product.id}" >
-                     <img src="${product.image}" alt="${product.name}" class="w-25 h-20 rounded-sm">
-                     ${product.name}
-                        
+                    <div class="w-20 h-20 shrink-0 overflow-hidden rounded-sm">
+                    <img src="${product.colors[0].image}" alt="${product.name}"  class="w-full h-full object-cover">
+                    </div>
+                    ${product.name}
                         </div>`
             ) .join("");
 
             const resultItem = searchResult.querySelectorAll(".search-result")
             resultItem.forEach(item =>{
-                item.addEventListener("click", ()=>{
-                    const productId = Number(item.dataset.id)
-                    const product = products.find(
-                        product => product.id === productId
-                    )
-
-                    console.log(product) // I should link it to the product shop page later
-                    searchContainer.value = product.name;
-                    searchResult.classList.add("hidden");
-                })
-            })
+    item.addEventListener("click", ()=>{
+        const productId = Number(item.dataset.id);
+        window.location.href = `product-details.html?id=${productId}`;
+    })
+})
 
         }
 
