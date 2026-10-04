@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+
+    <title>Login | Fashion Store</title>
+</head>
+
+<body class="bg-stone-50 text-slate-900">
+<div id="header"></div>
+
+<main class="flex items-center">
+<section class="w-full max-w-7xl mx-auto px-5 md:px-10 pt-22 pb-8">
+     <div class="grid lg:grid-cols-2 rounded-[2rem] overflow-hidden shadow-sm">
+        <div class="hidden lg:block relative min-h-[600px]">
+        <img src="./assests/images/general-pages/login-img.png"  alt="Fashion collection"
+            class="absolute inset-0 w-full h-full object-cover" >
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-12 pb-20 text-white">             
+        </div>
+        </div>
+
+    <div class="bg-white flex items-center justify-center px-7 py-12 md:px-14 lg:px-16">
+        <div class="w-full max-w-md">
+        <div class="mb-10">
+         <p class="text-xs uppercase tracking-[0.3em] text-olive-700 font-semibold">
+            Welcome Back
+        </p>
+
+        <h1 class="text-4xl md:text-5xl font-bold mt-4">
+            Sign in
+        </h1>
+
+        <p class="text-sm text-gray-500 mt-4">
+            Sign in to continue shopping with Fashion Store.
+         </p>
+        </div>
+
+    <form id="login-form" class="space-y-6">    
+    <div>
+    <label  for="email"  class="block text-sm font-semibold mb-2" >
+            Email Address
+    </label>
+    <input type="email" id="email"  name="email" placeholder="you@example.com"
+        class="w-full border-b border-gray-300 bg-transparent px-1 py-3 text-sm outline-none transition-colors focus:border-olive-700" >
+    <p id="email-error"  class="hidden text-xs text-red-500 mt-2"  >
+    </p>
+    </div>
+
+   <div>
+
+    <div class="flex items-center justify-between mb-2">
+    <label  for="password" class="text-sm font-semibold">
+            Password
+    </label>
+    <a href="#" class="text-xs text-olive-700 hover:text-olive-900 transition-colors">
+     Forgot password?
+    </a>
+    </div>
+
+    <div class="relative">
+    <input type="password"id="password" name="password" placeholder="Enter your password"
+    class="w-full border-b border-gray-300 bg-transparent px-1 py-3 pr-10 text-sm outline-none transition-colors focus:border-olive-700"
+    >
+
+    <button type="button" id="toggle-password"class="absolute right-1 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700"
+    aria-label="Show password" >
+    <i class="fa-regular fa-eye"></i>
+    </button>
+    </div>
+    <p  id="password-error" class="hidden text-xs text-red-500 mt-2">
+    </p>
+    </div>
+
+    <div class="flex items-center gap-2">
+    <input type="checkbox"  id="remember"  class="accent-olive-700 w-4 h-4" >
+    <label for="remember" class="text-xs text-gray-500 cursor-pointer"  >
+        Remember me
+    </label>
+    </div>
+
+    <button type="submit"
+    class="w-full bg-olive-800 hover:bg-olive-900 text-white py-3.5 rounded-xl text-sm font-semibold transition-colors" >
+        Sign In
+    </button>
+    </form>
+
+    <div class="flex items-center gap-4 my-5">
+    <span class="h-px bg-gray-200 flex-1"></span>
+    <span class="text-xs text-gray-400">
+        OR
+    </span>
+    <span class="h-px bg-gray-200 flex-1"></span>
+    </div>
+
+
+
+    <p class="text-center text-sm text-gray-500">
+        Don't have an account?
+    <a    href="register.html"
+    class="font-semibold text-olive-700 hover:text-olive-900 transition-colors" >
+        Create one
+    </a>
+    </p>
+
+    <div class="text-center mt-1">
+    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-700 transition-colors">
+    <i class="fa-solid fa-arrow-left"></i>
+        Back to store
+    </a>
+    </div>
+    </div>
+
+</div>
+</div>
+</section>
+</main>
+
+<div id="footer">
+     </div>
+      
+<script src="./js/header.js"></script>
+<script src="./js/footer.js"></script>
+</body>
+</html>

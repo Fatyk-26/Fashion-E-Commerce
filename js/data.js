@@ -446,7 +446,6 @@ Composition & Care:
     price: 160,
     rating: 3,
     sizes: ["XS", "S", "M", "L", "XL"],
-    image: "assests/images/jacket-a.png",
     description:`A clean everyday essential with a minimal graphic detail. This adidas House Of Tiro Nations T-shirt features a classic silhouette and subtle branding, making it an easy choice for casual and sporty outfits.
 
 Highlights
@@ -925,7 +924,6 @@ Highlights
     price: 150 ,
     rating: 2,
     sizes: ["XS", "S", "M", "L", "XL"],
-    image: "assests/images/jacket-a.png",
     description: `This top is full of romantic details, from the ruffled trims to the all-over smocked texture created by the seersucker fabric.
 
 Highlights:
