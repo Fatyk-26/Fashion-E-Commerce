@@ -2,10 +2,11 @@ const header = document.querySelector("#header");
 fetch("./header.html")
     .then(response => response.text())
     .then(data => {
-        header.innerHTML = data;
-        updateHeaderCounts();
-        searchFieldHeader();
-
+    header.innerHTML = data;
+    updateHeaderCounts();
+    updateAuthHeader();
+    setupLogout();
+    searchFieldHeader();
     });
 
 
@@ -113,6 +114,54 @@ function searchFieldHeader(){
     }
     });
 }
+
+
+function updateAuthHeader() {
+    console.log("updateAuthHeader is running");
+    const token = sessionStorage.getItem("token");
+    const user = JSON.parse(sessionStorage.getItem("user"));
+
+    const loginLink = document.querySelector("#login-link");
+    const registerLink = document.querySelector("#register-link");
+    const userInfo = document.querySelector("#user-info");
+    const userName = document.querySelector("#user-name");
+
+    
+
+    if (!loginLink || !registerLink || !userInfo || !userName) {
+        return;
+    }
+
+    if (token && user) {
+        loginLink.classList.add("hidden");
+        registerLink.classList.add("hidden");
+
+        userInfo.classList.remove("hidden");
+        userInfo.classList.add("flex");
+
+        userName.textContent = `Hi, ${user.name}`;
+    } else {
+        loginLink.classList.remove("hidden");
+        registerLink.classList.remove("hidden");
+
+        userInfo.classList.add("hidden");
+        userInfo.classList.remove("flex");
+    }
+}
+
+function setupLogout() {
+    const logoutBtn = document.querySelector("#logout-btn");
+
+    if (!logoutBtn) return;
+
+    logoutBtn.addEventListener("click", () => {
+        sessionStorage.removeItem("token");
+        sessionStorage.removeItem("user");
+
+        window.location.href = "index.html";
+    });
+}
+
 
 
 

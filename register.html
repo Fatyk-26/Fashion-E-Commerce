@@ -65,7 +65,7 @@
             class="w-full border-b border-gray-300 bg-transparent px-1 py-3 pr-10 text-sm 
             outline-none transition-colors focus:border-olive-700" >
 
-            <button type="button" id="toggle-password" class="absolute right-1 top-1/2 -translate-y-1/2 
+            <button type="button" id="toggle-password" class=" toggle-password absolute right-1 top-1/2 -translate-y-1/2 
             text-gray-400 hover:text-gray-700"aria-label="Show password" >
             <i class="fa-regular fa-eye"></i>
             </button>
@@ -85,7 +85,7 @@
             outline-none transition-colors focus:border-olive-700"  >
 
             <button  type="button" id="toggle-confirm-password"
-            class="absolute right-1 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700" aria-label="Show password">
+            class="toggle-password absolute right-1 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700" aria-label="Show password">
             <i class="fa-regular fa-eye"></i>
             </button>
             </div>
@@ -95,11 +95,11 @@
 
             <div class="flex items-start gap-2">
             <input type="checkbox" id="terms" class="accent-olive-700 w-4 h-4 mt-0.5" >
-            <label for="terms" class="text-xs text-gray-500 cursor-pointer leading-5" >
+            <label ٍfor="terms" class="text-xs text-gray-500 cursor-pointer leading-5" >
                  I agree to the Terms & Conditions
             </label>
             </div>
-
+            <p id="register-message" class="hidden text-sm text-center"></p>
             <p id="terms-error" class="hidden text-xs text-red-500 -mt-3" ></p>
 
             <button  type="submit" class="w-full bg-olive-800 hover:bg-olive-900 
@@ -148,6 +148,7 @@
 
 <script src="./js/header.js"></script>
 <script src="./js/footer.js"></script>
+<script src="./js/register.js"></script>
 
 </body>
 </html>

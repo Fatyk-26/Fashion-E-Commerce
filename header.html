@@ -19,8 +19,17 @@
             </div>  
             </div>
             <ul class="flex gap-3 pt-1" >
-            <li class="hover:opacity-45"><a href="login.html">Login</a></li>
-            <li class="hover:opacity-45"><a href="register.html">Register</a></li>
+            <li id="login-link" class="hover:opacity-45"><a href="login.html">Login</a></li>
+            <li id="register-link" class="hover:opacity-45"><a href="register.html">Register</a></li>
+            <li id="user-info" class="hidden items-center gap-3">
+             <a href="account.html" id="account-link" class="flex items-center gap-2 hover:opacity-45" 
+             aria-label="My Account" title="My Account"> 
+             <i class="fa-regular fa-user"></i> <span id="user-name"></span>
+            </a>
+             <button id="logout-btn" type="button" class="hover:opacity-45"> Logout
+             </button>
+            </li>
+
             <a href="wishlist.html"><i class="fa-regular fa-heart py-1 hover:opacity-45 "></i>
             <span id="wishlist-count">0</span></a>
             <a href="cart.html"> <i class="fa-solid fa-cart-shopping py-1 hover:opacity-45"></i>
