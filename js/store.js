@@ -57,7 +57,6 @@ if (!product) return;
 
 
 function updateWishlistButtons(){
-
 const wishlistButtons = document.querySelectorAll(".wishlist-btn")
 
 wishlistButtons.forEach(button =>{
@@ -91,7 +90,8 @@ function showToast(message, type ="add", duration = 2000) {
 const toast = document.createElement("div")
 toast.classList.add(
         "bg-white", "border", "border-gray-200", "shadow-lg", "rounded-xl",
-        "px-10", "py-3", "text-md", "font-semibold",
+        "px-4", "sm:px-6", "lg:px-10", "py-3", "text-sm", "sm:text-base", "font-semibold",
+        "max-w-[calc(100vw-2rem)]", "break-words", "text-center",
         "opacity-0", "translate-y-2", "transition-all", "duration-300"
     );
 
@@ -154,16 +154,8 @@ cartContainer.forEach(button =>{
 function updateCartButtons() {
     const cartButtons = document.querySelectorAll(".cart-btn");
     cartButtons.forEach(button => {
-        const productId = Number(button.dataset.id);
-
-        const cartExist = cart.some(
-            product => product.id === productId
-        );
-
-        if (cartExist) {
-            button.textContent = "Added to Cart";
-            button.classList.remove("bg-olive-800");
-            button.classList.add("bg-olive-500");
-        }
+        button.textContent = "Add to Cart";
+        button.classList.remove("bg-olive-500");
+        button.classList.add("bg-olive-800");
     });
 }

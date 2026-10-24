@@ -1,3 +1,4 @@
+
 const colthingGuide = document.querySelector("#clothing-guide")
 const shoesGuide = document.querySelector("#shoes-guide")
 

@@ -17,6 +17,7 @@ emailjs.init({
 
 faqBtns.forEach(btn =>{
     btn.addEventListener("click", ()=>{
+        
     const faqAnswer = btn.nextElementSibling;
     faqAnswer.classList.toggle("hidden");
 

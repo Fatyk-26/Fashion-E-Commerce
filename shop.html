@@ -5,22 +5,28 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="./src/output.css">
  <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
- <title>Fashion-Store</title>
 
+<title>Shop | Fashion Store</title>
 </head>
 <body>
     
-    
 <div id="header"></div>
-<div id="toast-container"  class="fixed top-24 left-1/2 -translate-x-1/2 z-[6000] flex flex-col gap-3">
+<div id="toast-container" class="fixed top-24 left-1/2 -translate-x-1/2 z-[6000] flex flex-col gap-3">
 </div>
 
-<section class="p-18">
+<section class="px-3 py-10 sm:px-6 sm:py-10 lg:p-18">
 
-<h2 class="text-center text-3xl p-12 font-semibold  ">Products Section</h2>
+<h2 class="text-center text-xl sm:text-3xl p-12 font-semibold  ">Products Section</h2>
 
-<section class="flex border border-olive-300 bg-stone-50 rounded-lg p-10 gap-10">
-    <aside class="w-56 shrink-0 ">
+<section class="flex flex-col lg:flex-row border border-olive-300 bg-stone-50 rounded-lg p-4 sm:p-6 lg:p-10 gap-4 lg:gap-10">
+    <button id="toggle-filters" type="button" class="lg:hidden flex items-center justify-center gap-2 border border-gray-300
+       rounded-xl px-4 py-3 bg-white">
+      <i class="fa-solid fa-sliders"></i>
+        Filters
+        <i id="filters-arrow" class="fa-solid fa-chevron-down text-xs"></i>
+    </button>
+
+    <aside id="shop-filters" class="hidden lg:block w-full lg:w-56 lg:shrink-0">
      <h3 class="text-lg font-semibold mb-4">Filters</h3>
 
      <div class="flex flex-col gap-2">
@@ -28,22 +34,22 @@
        
         <label>
             <input type="radio" name="category" value="Accessories">
-            Accessories
+              Accessories
         </label>
 
         <label>
             <input type="radio" name="category" value="Clothing">
-            Clothing
+              Clothing
         </label>
 
         <label >
             <input type="radio" name="category" value="Shoes"> 
-            Shoes
+              Shoes
         </label>
 
         <label>
             <input type="radio" name="category" value="Bags">
-            Bags
+              Bags
         </label>
      </div>
 
@@ -83,33 +89,22 @@
     <span id="min-price-value">SAR 0</span>
     <span id="max-price-value">SAR 1000</span>
   </div>
+
   <div class="relative h-5">
     <div
-      class="absolute top-1/2 left-0 right-0 h-1 -translate-y-1/2 bg-gray-300 rounded-full"
-    ></div>
+      class="absolute top-1/2 left-0 right-0 h-1 -translate-y-1/2 bg-gray-300 rounded-full">
+    </div>
 
     <div
       id="price-track"
-      class="absolute top-1/2 h-1 -translate-y-1/2 bg-olive-800 rounded-full"
-    ></div>
+      class="absolute top-1/2 h-1 -translate-y-1/2 bg-olive-800 rounded-full">
+    </div>
 
-    <input
-      type="range"
-      id="min-price"
-      min="0"
-      max="1000"
-      value="0"
-      class="price-range absolute inset-0 w-full"
-    >
+    <input type="range"  id="min-price"   min="0"   max="1000" value="0"
+      class="price-range absolute inset-0 w-full">
 
-    <input
-      type="range"
-      id="max-price"
-      min="0"
-      max="1000"
-      value="1000"
-      class="price-range absolute inset-0 w-full"
-    >
+    <input type="range"  id="max-price"  min="0"  max="1000" value="1000"
+      class="price-range absolute inset-0 w-full">
   </div>
 </div>
 
@@ -118,47 +113,47 @@
        
         <label>
             <input type="checkbox" name="brand" value="Tommy Hilfiger">
-            Tommy Hilfiger
+             Tommy Hilfiger
         </label>
 
          <label>
             <input type="checkbox" name="brand" value="Calvin Klein">
-            Calvin Klein
+             Calvin Klein
         </label>
         
          <label>
             <input type="checkbox" name="brand" value="Adidas">
-            Adidas
+              Adidas
         </label>
 
          <label>
             <input type="checkbox" name="brand" value="Guess">
-            Guess
+              Guess
         </label>
      </div>
 
 
-<button type="button" id="clear-filters" class="bg-olive-800 px-6 py-1 mt-20 rounded-2xl block mx-auto text-white hover:opacity-85">
-  Clear Filters
-</button>
-    </aside>
+    <button type="button" id="clear-filters" class="bg-olive-800 px-6 py-1 mt-20 rounded-2xl block mx-auto text-white hover:opacity-85">
+      Clear Filters
+    </button>
+  </aside>
 
   <div class="flex-1 flex flex-col gap-6">
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-2 sm:gap-3">
 
-      <div class="flex-1">
+      <div class="flex-1 min-w-0">
         <input type="text" id="search-products" placeholder="Search Products..." 
         class="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-olive-600 "> 
       </div>
 
-      <select  id="sort-products" class="border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-olive-600">
+      <select  id="sort-products" class="w-32 sm:w-40 shrink-0 border border-gray-300 rounded-xl px-2 sm:px-3 py-3 outline-none focus:border-olive-600">
        <option value="" selected class="">Sort by</option>
         <option value="price-low">Price: Low to High</option>
         <option value="price-high">Price: High to Low</option>
         <option value="name-a-z">Name: A to Z</option>
         <option value="name-z-a">Name: Z to A</option>
       </select> 
-      </div>
+    </div>
 
       <div class="flex-1 flex flex-col gap-6">
       <div id="shop-products"
@@ -178,8 +173,7 @@
       </div>
       </div>
 
-      <div id="pagination" class="flex justify-center items-center gap-2 mt-10">
-      </div> 
+      <div id="pagination" class="flex justify-center items-center gap-2 mt-10"></div> 
     </div>
 
 
@@ -202,8 +196,7 @@
 </section>
 </section>
 
-  <div id="footer">
-      </div>
+<div id="footer"></div>
 
 <script src="./js/header.js"></script>
 <script src="./js/data.js"></script>
@@ -211,7 +204,6 @@
 <script src="./js/store.js"></script>      
 <script src="./js/footer.js"></script>
 <script src="./js/shop.js"></script>
-
 
 </body>
 </html>

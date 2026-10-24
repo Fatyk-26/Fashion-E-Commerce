@@ -1,6 +1,11 @@
 
+
+// Used to verify the user's token and attach their information to the request.
+
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
+
+// Used to protect routes that require authentication
 
 const authMiddleware = async (req, res, next) => {
   const authHeader = req.headers.authorization;

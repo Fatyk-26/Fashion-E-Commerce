@@ -43,8 +43,6 @@ removeAllWishlist.addEventListener("click", () => {
         showToast("There are no products to remove" , "remove")
     }
 else{
-
-
     wishlist = [];
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
     wishlistContainer.innerHTML = "";

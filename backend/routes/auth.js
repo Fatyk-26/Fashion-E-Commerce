@@ -133,7 +133,6 @@ router.get("/me", authMiddleware, async (req, res) => {
   }
 });
 
-
 router.put("/profile", authMiddleware, async (req, res) => {
   try {
     const name = req.body.name?.trim();
@@ -169,7 +168,6 @@ router.put("/profile", authMiddleware, async (req, res) => {
   }
 });
 
-
 router.put("/address", authMiddleware, async (req, res) => {
   try {
     const { country, city, district, street, postalCode } = req.body;
@@ -180,9 +178,18 @@ router.put("/address", authMiddleware, async (req, res) => {
         $set: {
           "address.country": country?.trim() || "",
           "address.city": city?.trim() || "",
-          "address.district": district?.trim() || "",
           "address.street": street?.trim() || "",
-          "address.postalCode": postalCode?.trim() || ""
+          ...(typeof req.body.phone === "string"
+  ? { phone: req.body.phone.trim() }
+  : {}),
+
+...(typeof district === "string"
+  ? { "address.district": district.trim() }
+  : {}),
+
+...(typeof postalCode === "string"
+  ? { "address.postalCode": postalCode.trim() }
+  : {})
         }
       },
       { new: true, runValidators: true }
@@ -261,7 +268,6 @@ user.resetPasswordAttempts = 0;
 user.resetPasswordRequestedAt = new Date();
 
 await user.save();
-
 
     try {
       await transporter.sendMail({
@@ -380,6 +386,60 @@ router.post("/reset-password", async (req, res) => {
     });
   }
 });
+
+router.put("/me/address", authMiddleware, async (req, res) => {
+    try {
+        const { phone, address } = req.body;
+
+        if (
+            typeof phone !== "string" ||
+            !phone.trim() ||
+            !address ||
+            typeof address.street !== "string" ||
+            !address.street.trim() ||
+            typeof address.city !== "string" ||
+            !address.city.trim()
+        ) {
+            return res.status(400).json({
+                message: "Phone, street address, and city are required."
+            });
+        }
+
+        const user = await User.findByIdAndUpdate(
+            req.user.id,
+            {
+                $set: {
+                    phone: phone.trim(),
+                    "address.street": address.street.trim(),
+                    "address.city": address.city.trim(),
+                    "address.country": "Saudi Arabia"
+                }
+            },
+            {
+                new: true,
+                runValidators: true
+            }
+        ).select("-password");
+
+        if (!user) {
+            return res.status(404).json({
+                message: "User not found."
+            });
+        }
+
+        return res.status(200).json({
+            message: "Shipping address saved successfully.",
+            user
+        });
+    } catch (error) {
+        console.error("Save address error:", error);
+
+        return res.status(500).json({
+            message: "Unable to save shipping address."
+        });
+    }
+});
+
 
 
 module.exports = router;

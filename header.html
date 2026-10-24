@@ -1,39 +1,134 @@
-<header class="bg-neutral-100 flex w-full fixed h-20 z-5000 items-center justify-evenly text-slate-900 font-semibold "  >
-        <img class="w-35 h-21 " src="assests/images/home-page/logo.png" alt="fashion-store-logo">
+
+<header class="bg-neutral-100 flex flex-row-reverse lg:flex-row w-full fixed top-0 h-20 z-5000 items-center 
+        justify-between lg:justify-evenly px-4 lg:px-0 text-slate-900 font-semibold">
+    <img class="w-35 h-21" src="assests/images/home-page/logo.png"  alt="fashion-store-logo">
+
+    <div class="flex items-center gap-4 lg:hidden">
+        <button id="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-dropdown">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="account.html" id="mobile-account-icon" class="hidden" aria-label="My Account" >
+            <i class="fa-regular fa-user py-1 hover:opacity-45"></i>
+        </a>
+
+        <a href="wishlist.html"> <i class="fa-regular fa-heart py-1 hover:opacity-45"></i>
+            <span id="mobile-wishlist-count">0</span>
+        </a>
+
+        <a href="cart.html"> <i class="fa-solid fa-cart-shopping py-1 hover:opacity-45"></i>
+            <span id="mobile-cart-count">0</span>
+        </a>
+    </div>
+
+    <div id="main-navigation" class="hidden lg:contents">
         <nav class="flex">
-            <ul  class="flex gap-4 ">
+            <ul class="flex gap-4">
                 <li class="hover:opacity-45"><a href="index.html">Home</a></li>
                 <li class="hover:opacity-45"><a href="shop.html">Shop</a></li>
-                <li class="hover:opacity-45"> <a href="orders.html">Orders</a></li>
-                <li class="hover:opacity-45"> <a href="about.html">About Us</a></li>
-                <li class="hover:opacity-45"> <a href="contact.html">Contact Us</a></li>
+                <li class="hover:opacity-45"><a href="orders.html">Orders</a></li>
+                <li class="hover:opacity-45"><a href="about.html">About Us</a></li>
+                <li class="hover:opacity-45"><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
 
-        <nav class="flex gap-3 ">
+        <nav class="flex gap-3 ml-10">
             <div class="relative">
-            <i class="fa-solid fa-magnifying-glass absolute p-3 text-olive-600 text-xs"></i>
-           <input  class="search-field border border-gray-300 rounded-xl px-4 pl-7 py-1 outline-none focus:border-olive-600 font-normal"
-            type="search" >  
-            <div id="search-results" class="absolute top-full left-0 mt-2 w-full bg-white border border-gray-200 rounded-xl shadow-md hidden z-50">
-            </div>  
+                <i class="fa-solid fa-magnifying-glass absolute p-3 text-olive-600 text-xs"></i>
+
+                <input class="search-field border border-gray-300 rounded-xl px-4 pl-7 py-1 outline-none 
+                 focus:border-olive-600 font-normal" type="search">
+
+                <div id="search-results" class="absolute top-full left-0 mt-2 w-full bg-white border border-gray-200 
+                    rounded-xl shadow-md hidden z-50">
+                </div>
             </div>
-            <ul class="flex gap-3 pt-1" >
-            <li id="login-link" class="hover:opacity-45"><a href="login.html">Login</a></li>
-            <li id="register-link" class="hover:opacity-45"><a href="register.html">Register</a></li>
-            <li id="user-info" class="hidden items-center gap-3">
-             <a href="account.html" id="account-link" class="flex items-center gap-2 hover:opacity-45" 
-             aria-label="My Account" title="My Account"> 
-             <i class="fa-regular fa-user"></i> <span id="user-name"></span>
+
+            <ul class="flex gap-3 pt-1">
+                <li id="login-link" class="hover:opacity-45">
+                    <a href="login.html">Login</a>
+                </li>
+
+                <li id="register-link" class="hover:opacity-45">
+                    <a href="register.html">Register</a>
+                </li>
+
+                <li id="user-info" class="hidden items-center gap-3">
+                    <a href="account.html" id="account-link" class="flex items-center gap-2 hover:opacity-45"
+                       aria-label="My Account" title="My Account">
+                    <i class="fa-regular fa-user"></i>
+                    <span id="user-name"></span>
+                    </a>
+
+                    <button id="logout-btn" type="button" class="hover:opacity-45">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        Logout
+                    </button>
+                </li>
+            </ul>
+       
+
+        <div class="hidden lg:flex items-center gap-3">
+            <a href="wishlist.html">
+                <i class="fa-regular fa-heart py-1 hover:opacity-45"></i>
+                <span id="wishlist-count">0</span>
             </a>
-             <button id="logout-btn" type="button" class="hover:opacity-45"> Logout
-             </button>
+
+            <a href="cart.html">
+                <i class="fa-solid fa-cart-shopping py-1 hover:opacity-45"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+ </nav>
+</div>
+
+    <div id="mobile-dropdown" class="hidden absolute top-20 left-0 w-full bg-neutral-100 shadow-md p-5 lg:hidden">
+        <div class="relative mb-5">
+            <i class="fa-solid fa-magnifying-glass absolute p-3 text-olive-600 text-xs"></i>
+            <input class="search-field border border-gray-300 rounded-xl px-4 pl-7 py-1 w-full outline-none focus:border-olive-600 
+                font-normal" type="search" placeholder="Search products">
+            <div class="mobile-search-results absolute top-full left-0 mt-2 w-full bg-white 
+                border border-gray-200 rounded-xl shadow-md hidden z-50">
+            </div>
+        </div>
+
+        <nav>
+            <ul class="flex flex-col gap-4">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+    
+
+    <div class="mt-5 border-t border-gray-200 pt-4">
+        <ul class="flex flex-col gap-4">
+            <li id="mobile-login-link">
+                <a href="login.html">Login</a>
             </li>
 
-            <a href="wishlist.html"><i class="fa-regular fa-heart py-1 hover:opacity-45 "></i>
-            <span id="wishlist-count">0</span></a>
-            <a href="cart.html"> <i class="fa-solid fa-cart-shopping py-1 hover:opacity-45"></i>
-            <span id="cart-count">0</span></a></a>
+            <li id="mobile-register-link">
+                <a href="register.html">Register</a>
+            </li>
+
+            <li id="mobile-user-info" class="hidden flex-col gap-4">
+                <span id="mobile-user-name" class="font-semibold"></span>
+
+                <a href="account.html" class="flex items-center gap-2">
+                    <i class="fa-regular fa-user"></i>
+                     My Account
+                </a>
+
+                <button id="mobile-logout-btn" type="button" class="flex items-center gap-2 hover:opacity-60">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        Logout
+                </button>
+            </li>
         </ul>
-        </nav>
-    </header>
+    </div>
+</div>
+</header>
+

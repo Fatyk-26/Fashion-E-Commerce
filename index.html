@@ -5,75 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-    <title>Fashion-Store</title>
 
+     <title>Home| Fashion Store</title>
 </head>
+
 <body>
-      <div id="header">
-      </div>
-      <div id="toast-container"  class="fixed top-24 left-1/2 -translate-x-1/2 z-[6000] flex flex-col gap-3">
-      </div>
+<div id="header"></div>
+<div id="toast-container"  class="fixed top-24 left-1/2 -translate-x-1/2 z-[6000] flex flex-col gap-3"></div>
 
-    <section class="w-full h-screen relative ">
-        <img class="w-full h-full object-cover object-top absolute inset-0 -z-10 opacity-87  " src="assests/images/home-page/hero-bg.jpg" alt="fashion-img">
-        <div class="w-full h-full flex flex-col justify-center items-start pl-10"> 
-        <h3 class="text-olive-800 font-semibold text-7xl text-shadow-md text-shadow-olive-400 ">Lifestyle <br>Fashion <br> Destination</h3>
-         <p class="text-stone-500 text-sm pt-4 font-semibold ">Our collection brings together modern trends, timeless elegance, and <br>carefully selected pieces designed to make every look feel special.</p>
-       <a href="shop.html"><button class="border border-gray-200 rounded-3xl w-30 mt-5 p-2 text-white bg-olive-800 text-shadow-xl font-semibold hover:opacity-85 " type="button">SHOP NOW
-       </button>
+<section class="w-full min-h-[500px] h-[calc(100svh-180px)] lg:min-h-[732px] relative ">
+    <img class="w-full h-full object-cover object-top absolute inset-0 -z-10 opacity-87" 
+        src="assests/images/home-page/hero-bg.jpg" alt="fashion-img">
+    <div class="w-full h-full flex flex-col justify-center items-start px-5 sm:px-8 lg:pl-10 lg:pr-0"> 
+    <h3 class="text-olive-800 font-semibold text-4xl sm:text-5xl lg:text-7xl text-shadow-md text-shadow-olive-400 ">
+        Lifestyle <br>Fashion <br> Destination
+    </h3>
+    <p class=" text-stone-400 sm:text-stone-500 text-sm sm:text-base pt-4 max-w-xl font-semibold ">
+        Our collection brings together modern trends, timeless elegance, and carefully selected pieces
+         designed to make every look feel special.
+    </p>
+    <a href="shop.html"><button class="border border-gray-200 rounded-3xl w-30 mt-5 p-2 text-white bg-olive-800 
+        text-shadow-xl font-semibold hover:opacity-85 " type="button">
+            SHOP NOW
+    </button>
     </a>  
-        </div>
-    </section>
+    </div>
+</section>
 
-    <section>
-        <h2 class="text-center text-3xl p-12 font-semibold ">Products Categories</h2>
-        <section class="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 max-w-7xl mx-auto gap-6 pb-16">
-        <div class="border border-gray-300 rounded-2xl p-5">
-            <img class="w-full h-64 object-cover" src="assests/images/home-page/clothing.jpg" alt="#">
-            <h3 class="font-semibold text-stone-700 mt-2 text-xl">Clothing</h3>
-           <a href="shop.html?category=Clothing" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold text-olive-500 transition-transform duration-200 hover:scale-105">
+<section>
+    <h2 class="text-center text-3xl p-12 font-semibold ">Products Categories</h2>
+    <section class="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 max-w-7xl mx-auto  px-4 sm:px-6 gap-5 pb-16gap-6 pb-16">
+    <div class="border border-gray-300 rounded-2xl p-5">
+    <img class="w-full h-64 object-cover" src="assests/images/home-page/clothing.jpg" alt="#">
+    <h3 class="font-semibold text-stone-700 mt-2 text-xl">
+        Clothing
+    </h3>
+    <a href="shop.html?category=Clothing" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold 
+        text-olive-500 transition-transform duration-200 hover:scale-105">
         Explore Collection
-        <i class="fa-solid fa-arrow-right pt-1"></i> 
-        </a>
-        </div>
-
-        <div class="border border-gray-300 rounded-2xl p-5">
-            <img class="w-full h-64 object-cover" src="assests/images/home-page/shoes.png" alt="#">
-            <h3 class="font-semibold text-stone-700 mt-2 text-xl">Shoes</h3>
-            <a href="shop.html?category=Shoes" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold text-olive-500 transition-transform duration-200 hover:scale-105 ">
-        Explore Collection
-        <i class="fa-solid fa-arrow-right pt-1"></i>
-        </a>
-        </div>
-
-        <div class="border border-gray-300 rounded-2xl p-5">
-            <img class="w-full h-64 object-cover" src="assests/images/home-page/bags.jpg" alt="#">
-            <h3 class="font-semibold text-stone-700 mt-2 text-xl">Bags</h3>
-            <a href="shop.html?category=Bags" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold text-olive-500 transition-transform duration-200 hover:scale-105 ">
-        Explore Collection
-        <i class="fa-solid fa-arrow-right pt-1"></i> </a>
+    <i class="fa-solid fa-arrow-right pt-1"></i> 
+    </a>
     </div>
 
-        <div class="border border-gray-300 rounded-2xl p-5">
-            <img class="w-full h-64 object-cover" src="assests/images/home-page/accessories.png" alt="#">
-            <h3 class="font-semibold text-stone-700 mt-2 text-xl">Accessories</h3>
-           <a href="shop.html?category=Accessories" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold text-olive-500 transition-transform duration-200 hover:scale-105 ">
+    <div class="border border-gray-300 rounded-2xl p-5">
+    <img class="w-full h-64 object-cover" src="assests/images/home-page/shoes.png" alt="#">
+    <h3 class="font-semibold text-stone-700 mt-2 text-xl">
+        Shoes</h3>
+    <a href="shop.html?category=Shoes" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold 
+        text-olive-500 transition-transform duration-200 hover:scale-105 ">
         Explore Collection
-        <i class="fa-solid fa-arrow-right pt-1"></i>
-         </a>
-        </div>
-     </section>
+    <i class="fa-solid fa-arrow-right pt-1"></i>
+    </a>
+    </div>
+
+    <div class="border border-gray-300 rounded-2xl p-5">
+    <img class="w-full h-64 object-cover" src="assests/images/home-page/bags.jpg" alt="#">
+    <h3 class="font-semibold text-stone-700 mt-2 text-xl">
+        Bags
+    </h3>
+    <a href="shop.html?category=Bags" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold 
+        text-olive-500 transition-transform duration-200 hover:scale-105 ">
+        Explore Collection
+    <i class="fa-solid fa-arrow-right pt-1"></i></a>
+    </div>
+
+    <div class="border border-gray-300 rounded-2xl p-5">
+    <img class="w-full h-64 object-cover" src="assests/images/home-page/accessories.png" alt="#">
+    <h3 class="font-semibold text-stone-700 mt-2 text-xl">
+        Accessories
+    </h3>
+    <a href="shop.html?category=Accessories" class="inline-flex items-center gap-1 mt-2 text-sm font-semibold
+        text-olive-500 transition-transform duration-200 hover:scale-105 ">
+        Explore Collection
+    <i class="fa-solid fa-arrow-right pt-1"></i>
+    </a>
+    </div>
+    </section>
     </section>
 
     <section>
         <h2 class="text-center text-3xl p-12 font-semibold">Featured Products</h2>
-        <div id="featured-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto gap-5 pb-16">
+        <div id="featured-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto px-4 sm:px-6 gap-5 pb-16">
         </div>
     </section>
 
-    <section class="flex flex-col md:flex-row justify-center items-center p-30 gap-16">
+    <section class="flex flex-col md:flex-row justify-between items-center px-4 
+        sm:px-10 lg:px-24 py-12 md:py-16 gap-8 md:gap-12 max-w-7xl mx-auto">
     <div class="flex flex-col gap-2">
-        <h3 class="text-4xl text-olive-800 font-semibold">Join Our Newsletter</h3>
+        <h3 class="text-2xl sm:text-4xl text-olive-800 font-semibold">Join Our Newsletter</h3>
         <p>Get updates on new collections, exclusive offers, and the latest trends.</p>
     </div>
     
@@ -81,7 +100,9 @@
         <form class="subscribe-form flex rounded-3xl border border-gray-300 overflow-hidden w-full items-center " novalidate> 
             <i class="fa-regular fa-envelope py-3 px-4 shrink-0 text-gray-500"></i>
             <input class="min-w-0 flex-1 py-2 px-3 outline-none" placeholder="Enter Your Email:" id="email-input" type="email">
-            <button class="subscribe-btn shrink-0 bg-olive-800 px-4 sm:px-9 py-3 text-md text-white hover:opacity-85" type="submit">Join
+            <button class="subscribe-btn shrink-0 bg-olive-800 px-4 sm:px-9 py-3 text-md text-white 
+                hover:opacity-85" type="submit">
+                Join
             </button>
         </form>
         <span class="error-msg block text-red-500 text-sm px-4"></span>
@@ -89,8 +110,7 @@
 </section>
 
 
-    <div id="footer">
-      </div>
+<div id="footer"></div>
 
   <script src="./js/header.js"></script>
   <script src="./js/data.js"></script>

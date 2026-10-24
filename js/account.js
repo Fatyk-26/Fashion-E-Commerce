@@ -104,8 +104,7 @@ profileForm.addEventListener("submit", async (event) => {
       return;
     }
 
-    document.querySelector("#account-name").textContent = data.user.name;
-    sessionStorage.setItem("user", JSON.stringify(data.user));
+    await loadAccount();
 
     showMessage(
       profileMessage,
@@ -161,7 +160,8 @@ addressForm.addEventListener("submit", async (event) => {
       return;
     }
 
-    sessionStorage.setItem("user", JSON.stringify(data.user));
+    await loadAccount();
+
     showMessage(
       addressMessage,
       "Shipping address saved successfully!",

@@ -1,23 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Account | Fashion Store</title>
-    <link rel="stylesheet" href="./src/output.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./src/output.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<title>My Account | Fashion Store</title>
 </head>
 
 <body class="bg-neutral-50 text-slate-900">
 <div id="header"></div>
     <main class="max-w-6xl mx-auto px-5 pt-26 pb-16">
     <div class="text-center mb-10">
-        <h1 class="text-3xl font-semibold">My Account</h1>
+        <h1 class="text-3xl font-semibold">
+            My Account</h1>
         <p class="text-gray-500 mt-3">
-        Manage your personal information and shipping address. </p>
+         Manage your personal information and shipping address. 
+        </p>
         </div>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
@@ -25,24 +26,32 @@
     <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center">
     <img  src="assests/images/general-pages/default-avatar.png" alt="Profile picture" 
     class="w-24 h-24 rounded-full object-cover mb-4">
-    <h2  id="account-name" class="text-lg font-semibold text-slate-900" > My Account </h2>
-    <p class="text-sm text-gray-500 mt-2"> Welcome back! We're happy to have you here.</p>
+    <h2  id="account-name" class="text-lg font-semibold text-slate-900" >
+         - 
+        </h2>
+    <p class="text-sm text-gray-500 mt-2"> 
+        Welcome back! We're happy to have you here.
+    </p>
     </div>
 
     <nav class="bg-white border border-gray-200 rounded-xl p-6  flex flex-col gap-5 text-sm">
     <a href="#personal-info"  class="flex items-center gap-3 hover:opacity-60">  
-        <i class="fa-regular fa-user w-5"></i> Personal Information
+        <i class="fa-regular fa-user w-5"></i> 
+        Personal Information
     </a>
     <a href="#shipping-address" class="flex items-center gap-3 hover:opacity-60">
-        <i class="fa-solid fa-location-dot w-5"></i> Shipping Address
+        <i class="fa-solid fa-location-dot w-5"></i> 
+        Shipping Address
      </a>
 
     <a href="orders.html" class="flex items-center gap-3 hover:opacity-60">
-        <i class="fa-solid fa-box w-5"></i> My Orders
+        <i class="fa-solid fa-box w-5"></i> 
+        My Orders
     </a>
 
     <a href="wishlist.html"  class="flex items-center gap-3 hover:opacity-60">
-        <i class="fa-regular fa-heart w-5"></i> My Wishlist
+        <i class="fa-regular fa-heart w-5"></i> 
+        My Wishlist
     </a>
     </nav>
 </aside>
@@ -51,33 +60,41 @@
     <div class="md:col-span-2 flex flex-col gap-6">
         <section id="personal-info" class="bg-white border border-gray-200 rounded-xl p-6">
          <div class="mb-6">
-        <h2 class="text-xl font-semibold">  Personal Information </h2>
-        <p class="text-sm text-gray-500 mt-2"> Update your personal details below.
+        <h2 class="text-xl font-semibold"> 
+            Personal Information 
+        </h2>
+        <p class="text-sm text-gray-500 mt-2"> 
+            Update your personal details below.
         </p>
     </div>
 
     <form id="profile-form" class="flex flex-col gap-5">
     <div>
-    <label for="profile-name" class="block text-sm mb-2">Full Name
+    <label for="profile-name" class="block text-sm mb-2">
+        Full Name
     </label>
-    <input id="profile-name"  name="name"  type="text" required
-     class="w-full border border-gray-300 rounded-lg  px-4 py-3 outline-none focus:border-gray-600" >
+    <input id="profile-name" name="name" type="text" required 
+        class="w-full border border-gray-300 rounded-lg  px-4 py-3 outline-none focus:border-gray-600" >
     </div>
 
     <div>
-    <label for="profile-email"  class="block text-sm mb-2"> Email Address
+    <label for="profile-email"  class="block text-sm mb-2"> 
+        Email Address
     </label>
 
-    <input id="profile-email"  name="email"  type="email" readonly
+    <input id="profile-email" name="email" type="email" readonly
         class="w-full border border-gray-200 bg-gray-100 rounded-lg px-4 py-3 outline-none" >
      </div>
 
      <div>
-     <label for="profile-phone" class="block text-sm mb-2"> Phone Number
-        <span class="text-gray-400">(Optional)</span>
+     <label for="profile-phone" class="block text-sm mb-2"> 
+        Phone Number
+        <span class="text-gray-400">
+            (Optional)
+        </span>
     </label>
 
-    <input id="profile-phone" name="phone"  type="tel" placeholder="Enter your phone number"
+    <input id="profile-phone" name="phone" type="tel" placeholder="Enter your phone number"
         class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-600" >
     </div>
 
@@ -91,56 +108,64 @@
 
     <section id="shipping-address" class="bg-white border border-gray-200 rounded-xl p-6">
     <div class="mb-6">
-    <h2 class="text-xl font-semibold">  Shipping Address </h2>
-    <p class="text-sm text-gray-500 mt-2"> Add your address details for delivery.
+    <h2 class="text-xl font-semibold">  
+        Shipping Address 
+    </h2>
+    <p class="text-sm text-gray-500 mt-2"> 
+        Add your address details for delivery.
     </p>
     </div>
 
     <form id="address-form" class="flex flex-col gap-5">
     <div>
-        <label for="address-country" class="block text-sm mb-2">  Country
+        <label for="address-country" class="block text-sm mb-2">  
+            Country
         </label>
 
-         <input id="address-country"  name="country"   type="text" placeholder="e.g. Saudi Arabia"
+         <input id="address-country" name="country" type="text" placeholder="e.g. Saudi Arabia"
             class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-600"  >
             </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
        <div>
-        <label for="address-city"  class="block text-sm mb-2">  City
+        <label for="address-city"  class="block text-sm mb-2"> 
+            City
         </label>
 
-         <input  id="address-city"  name="city"  type="text"  placeholder="Enter city"
+         <input  id="address-city" name="city" type="text" placeholder="Enter city"
             class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-600"  >
             </div>
 
         <div>
-            <label for="address-district"  class="block text-sm mb-2">  District
+            <label for="address-district" class="block text-sm mb-2">  
+                District
             </label>
 
             <input id="address-district" name="district" type="text" placeholder="Enter district"
-                class="w-full border border-gray-300 rounded-lg  px-4 py-3 outline-none focus:border-gray-600"  >
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-600"  >
                 </div>
          </div>
 
         <div>
-            <label for="address-street" class="block text-sm mb-2"> Street Address
+            <label for="address-street" class="block text-sm mb-2"> 
+                Street Address
             </label>
 
-            <input id="address-street"  name="street" type="text" placeholder="Street name and building number"
+            <input id="address-street" name="street" type="text" placeholder="Street name and building number"
                 class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-600"  >
                 </div>
 
          <div>
-             <label for="address-postal"  class="block text-sm mb-2">  Postal Code
+             <label for="address-postal"  class="block text-sm mb-2"> 
+                 Postal Code
              </label>
 
-             <input id="address-postal" name="postalCode"  type="text"   placeholder="Enter postal code"
-                    class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-600" >
+             <input id="address-postal" name="postalCode" type="text" placeholder="Enter postal code"
+                 class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-600" >
         </div>
 
             <p id="address-message" class="text-sm hidden"></p>
-            <button  type="submit"  class="bg-slate-900 text-white rounded-lg px-6 py-3 hover:opacity-85 transition self-start">
+            <button  type="submit" class="bg-slate-900 text-white rounded-lg px-6 py-3 hover:opacity-85 transition self-start">
                  Save Address
             </button>
 

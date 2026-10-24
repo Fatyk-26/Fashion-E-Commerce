@@ -150,7 +150,7 @@ function applyFilters() {
             sizeButtons.textContent = size;
 
             sizeButtons.className =
-                    "flex border border-olive-400 rounded-full w-8 h-8 text-sm items-center justify-center hover:bg-olive-200";
+                "flex border border-olive-400 rounded-full w-8 h-8 text-sm items-center justify-center hover:bg-olive-200";
             
             modalSizes.appendChild(sizeButtons);
         });
@@ -190,7 +190,6 @@ if (product.colors && product.colors.length > 0) {
             "flex cursor-pointer border border-olive-400 rounded-full w-8 h-8 items-center justify-center";
 
         colorButton.classList.add(color.class);
-
         colorButton.dataset.color = color.name;
         colorButton.dataset.image = color.image;
 
@@ -201,18 +200,15 @@ if (product.colors && product.colors.length > 0) {
 
     colorButtons.forEach(button => {
         button.addEventListener("click", () => {
-
             colorButtons.forEach(btn => {
                 btn.classList.remove("ring-1", "ring-olive-800");
             });
 
             button.classList.add("ring-1", "ring-olive-800");
-
             selectedColor = button.dataset.color;
         });
     });
 }
-    
         });
 });
 
@@ -300,7 +296,7 @@ modalCartBtn.addEventListener("click" , ()=>{
         }
     }
 
-        minPrice.value = minPrice.min;
+    minPrice.value = minPrice.min;
     maxPrice.value = maxPrice.max;
     updatePriceSlider();
     applyFilters();
@@ -367,7 +363,7 @@ modalCartBtn.addEventListener("click" , ()=>{
     })
 
 
-    function renderPagination(totalProducts) {
+function renderPagination(totalProducts) {
         const totalPages = Math.ceil(totalProducts / productsPerPage);
 
         pagination.innerHTML = "";
@@ -427,6 +423,17 @@ modalCartBtn.addEventListener("click" , ()=>{
         currentPage = 1;
         applyFilters();
     }
+
+const toggleFiltersButton = document.querySelector("#toggle-filters");
+const shopFilters = document.querySelector("#shop-filters");
+const filtersArrow = document.querySelector("#filters-arrow");
+
+toggleFiltersButton.addEventListener("click", ()=>{
+    const isHidden = shopFilters.classList.toggle("hidden");
+    filtersArrow.classList.toggle("fa-chevron-down", isHidden);
+    filtersArrow.classList.toggle("fa-chevron-up", !isHidden);
+})
+
 
 
 

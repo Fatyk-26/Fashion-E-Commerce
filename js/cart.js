@@ -123,7 +123,6 @@ decreaseQuantity.forEach(button=>{
 
 
 function updateCartTotal() {
-
     const subtotal = cart.reduce((accumulator, product) => {
         return accumulator + (product.price * product.quantity);
     }, 0);
@@ -136,9 +135,22 @@ function updateCartTotal() {
     cartTotal.textContent = `${total} SAR`;
 }
 
+document.querySelector("#checkout-btn").addEventListener("click", () => {
+    if (cart.length === 0) {
+        showToast("Your cart is empty", "remove");
+        return;
+    }
 
-      
+    const token = sessionStorage.getItem("token");
 
-       
+    if (!token) {
+        sessionStorage.setItem("redirectAfterLogin", "checkout.html");
+        window.location.href = "login.html";
+        return;
+    }
+
+    window.location.href = "checkout.html";
+});
+
 
     

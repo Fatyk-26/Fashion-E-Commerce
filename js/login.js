@@ -9,7 +9,6 @@ const passwordIcon = togglePassword.querySelector("i");
 
 togglePassword.addEventListener("click", () => {
 const isHidden = passwordInput.type === "password";
-
   passwordInput.type = isHidden ? "text" : "password";
   passwordIcon.classList.toggle("fa-eye", !isHidden);
   passwordIcon.classList.toggle("fa-eye-slash", isHidden);
@@ -69,7 +68,13 @@ const password = passwordInput.value;
         sessionStorage.setItem("token", data.token);
         sessionStorage.setItem("user", JSON.stringify(data.user));
 
-        window.location.href = "./index.html";
+        
+const redirectPage = sessionStorage.getItem("redirectAfterLogin");
+
+sessionStorage.removeItem("redirectAfterLogin");
+
+window.location.href = redirectPage || "./index.html";
+
 
     } catch (error) {
         console.error("Login error:", error);

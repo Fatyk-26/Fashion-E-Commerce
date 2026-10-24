@@ -5,55 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-    <title>Fashion-Store</title>
+
+    <title>Product Details | Fashion Store</title>
 </head>
 <body>
 
-    <div id="header">
-    </div>
-    <div id="toast-container"  class="fixed top-24 left-1/2 -translate-x-1/2 z-[6000] flex flex-col gap-3">
-    </div>
+<div id="header"></div>
+<div id="toast-container"  class="fixed top-24 left-1/2 -translate-x-1/2 z-[6000] flex flex-col gap-3"></div>
 
 <main class="pt-24">
-    <section class="flex gap-4 mx-10 p-5 rounded-xl border border-gray-200 shadow-md">
-        <div class="flex flex-col gap-2 pt-4  w-20 shrink-0">
+    <section class="flex flex-col lg:flex-row gap-4 mx-4 sm:mx-6 lg:mx-10 p-3 sm:p-5 rounded-xl border border-gray-200 shadow-md">
+        <div class="hidden  lg:flex flex-col gap-2 pt-4  w-20 shrink-0">
             <img src="" alt="" class="product-thumbnail w-full h-20 object-cover">
             <img src="" alt="" class="product-thumbnail w-full h-20 object-cover">
             <img src="" alt="" class="product-thumbnail w-full h-20 object-cover">
             <img src="" alt="" class="product-thumbnail w-full h-20 object-cover">
             <img src="" alt="" class="product-thumbnail w-full h-20 object-cover">
         </div>
-        <div class="relative w-120 shrink-0">
-        <img src="" alt="" class="product-main-image w-full h-130 object-cover border border-olive-100 rounded-lg  ">
+        
+        <div class="relative w-full lg:w-120 lg:shrink-0">
+        <img src="" alt="" class="product-main-image w-full h-80 sm:h-115 lg:h-130 object-cover border border-olive-100 rounded-lg">
         </div>
 
         <div class=" flex flex-col gap-3 p-6 w-full ">
             <div class="product-rating flex items-center gap-1 text-amber-400 text-sm"></div>
-            <h3 class=" text-2xl product-name"></h3>
+            <h3 class=" text-lg sm:text-2xl product-name"></h3>
             <span class="product-price"></span>
-            <div class=" size-line rounded-sm border text-olive-200 w-1/2 "></div>
-            <div class=" parent-size flex justify-between w-1/2 pt-3">
+            <div class=" size-line rounded-sm border text-olive-200  sm:w-1/2 "></div>
+            <div class=" parent-size flex justify-between sm:w-1/2 pt-3">
             <span class="product-size-field rounded-xl bg-olive-200 px-3 text-xs w-20">Size:</span>
-            <span class="rounded-xl bg-olive-200 px-3 text-xs w-20"><a class="size-guide-link" href="guide.html">Size guide</a></span>
+            <span class="rounded-xl bg-olive-200 px-3 text-xs w-30 md:w-20"><a class="size-guide-link" href="guide.html">
+                Size guide</a>
+            </span>
         </div>
 
-        <div class="product-sizes flex gap-3 pt-3"></div>
+        <div class="product-sizes flex gap-1 sm:gap-3 pt-3"></div>
 
-        <div class=" rounded-sm border text-olive-200 w-1/2 "></div>
+        <div class=" rounded-sm border text-olive-200 sm:w-1/2 "></div>
             <span class=" product-color-field rounded-xl bg-olive-200 px-3 mt-3 text-xs w-33">Color:</span>
         
-        <div class="product-colors flex gap-3 pt-3"></div>
+        <div class="product-colors flex gap-1 sm:gap-3  pt-3"></div>
 
-        <div class="flex gap-3 w-1/2 mt-1">
+        <div class="flex gap-3 sm:w-1/2 mt-1">
         <button class="cart-btn flex-1 bg-olive-700 w-1/2 mt-5 px-1 py-2 rounded-2xl text-white hover:opacity-95" type="button">
-            <i class="fa-solid fa-cart-shopping mr-2"></i>Add to cart
+            <i class="fa-solid fa-cart-shopping mr-2"></i>
+                Add to cart
         </button>
-             <button  data-id="${currentProduct.id}"  class="wishlist-btn bg-olive-700 w-12 mt-5 px-1 py-2 rounded-2xl text-white hover:opacity-95" type="button">
+             <button  data-id="${currentProduct.id}" class="wishlist-btn bg-olive-700
+                 w-12 mt-5 px-1 py-2 rounded-2xl text-white hover:opacity-95" type="button">
                 <i class="fa-regular fa-heart"></i>
-            </button></div>
+            </button>
+        </div>
 
-        <div class="product-highlights-header flex items-center justify-between cursor-pointer">
-           <h3 class="text-olive-600 text-sm font-semibold">PRODUCT HIGHLIGHTS</h3>
+        <div class="product-highlights-header flex items-center justify-between cursor-pointer pt-5">
+           <h3 class="text-olive-600 text-sm font-semibold">
+                PRODUCT HIGHLIGHTS</h3>
         <i class="fa-solid fa-chevron-up product-highlights-arrow"></i>
         </div>
 
@@ -63,67 +69,69 @@
       
 
         <div class="product-details-header flex items-center justify-between cursor-pointer">
-         <h3 class="text-olive-600 text-sm font-semibold">PRODUCT DETAILS</h3>
+         <h3 class="text-olive-600 text-sm font-semibold">
+                PRODUCT DETAILS</h3>
          <i class="fa-solid fa-chevron-up product-details-arrow"></i>
-</div>
-<div class="product-details-content">
-       <table class="w-full border-collapse border border-gray-300 rounded-xl overflow-hidden bg-olive-100">
-    <tbody>
-        <tr>
-            <td class="border border-gray-300 px-4 py-3 font-semibold">Country of Origin</td>
-            <td id="details-origin" class="border border-gray-300 px-4 py-3"></td>
-        </tr>
+        </div>
+        
+        <div class="product-details-content">
+            <table class="w-full border-collapse border border-gray-300 rounded-xl overflow-hidden bg-olive-100">
+                <tbody>
+                    <tr>
+                        <td class="border border-gray-300 px-3 text-xs sm:text-base py-3 font-semibold">
+                            Country of Origin</td>
+                        <td id="details-origin" class="border border-gray-300  px-3 text-xs sm:text-base py-3"></td>
+                    </tr>
 
-          <tr>
-            <td class="border border-gray-300 px-4 py-3 font-semibold">Model Name</td>
-            <td id="details-model" class="border border-gray-300 px-4 py-3"></td>
-        </tr>
+                    <tr>
+                        <td class="border border-gray-300 p px-3 text-xs sm:text-base py-3 font-semibold">
+                            Model Name</td>
+                        <td id="details-model" class="border border-gray-300  px-3 text-xs sm:text-base py-3"></td>
+                    </tr>
 
-        <tr>
-            <td class="border border-gray-300 px-4 py-3 font-semibold">Color</td>
-            <td id="details-color" class="border border-gray-300 px-4 py-3"></td>
-        </tr>
+                    <tr>
+                        <td class="border border-gray-300  px-3 text-xs sm:text-base py-3 font-semibold">
+                            Color</td>
+                        <td id="details-color" class="border border-gray-300  px-3 text-xs sm:text-base py-3"></td>
+                    </tr>
 
-        <tr>
-            <td class="border border-gray-300 px-4 py-3 font-semibold">Gender</td>
-            <td id="details-gender" class="border border-gray-300 px-4 py-3"></td>
-        </tr>
-    </tbody>
-</table>
-</div>
+                    <tr>
+                        <td class="border border-gray-300  px-3 text-xs sm:text-base py-3 font-semibold">
+                            Gender</td>
+                        <td id="details-gender" class="border border-gray-300  px-3 text-xs sm:text-base py-3"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         </div>
     </section>
 
-    <section class="mx-10 my-10">
-    <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl font-semibold">Related Products</h2>
+    <section class=" mx-4 sm:mx-3 my-10">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-semibold">Related Products</h2>
+        </div>
+
+        <div class="flex items-center gap-4">
+
+        <button id="related-prev" type="button" class="w-10 h-10 rounded-full border border-gray-300 flex 
+            items-center justify-center hover:bg-olive-800 hover:text-white">
+        <i class="fa-solid fa-chevron-left text-xs"></i>
+        </button>
+
+        <div id="related-products" class="flex gap-5 overflow-hidden">
+        </div>
+
+        <button id="related-next"  type="button"  class="w-10 h-10 rounded-full border border-gray-300 flex 
+            items-center justify-center hover:bg-olive-800 hover:text-white">
+        <i class="fa-solid fa-chevron-right text-xs"></i>
+    </button>
+
     </div>
-
-    <div class="flex items-center gap-4">
-
-    <button
-    id="related-prev"
-    type="button"
-    class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-olive-800 hover:text-white">
-    <i class="fa-solid fa-chevron-left text-xs"></i>
-</button>
-
-    <div id="related-products" class="flex gap-5 overflow-hidden">
-    </div>
-
-    <button
-    id="related-next"
-    type="button"
-    class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-olive-800 hover:text-white">
-    <i class="fa-solid fa-chevron-right text-xs"></i>
-</button>
-
-</div>
     </section>
-    </main>
+</main>
 
-      <div id="footer">
-      </div>
+      
+<div id="footer"></div>
 
 <script src="./js/header.js"></script>
 <script src="./js/data.js"></script>
@@ -131,5 +139,6 @@
 <script src="./js/store.js"></script>
 <script src="./js/footer.js"></script>
 <script src="./js/product-details.js"></script>
+
 </body>
 </html>

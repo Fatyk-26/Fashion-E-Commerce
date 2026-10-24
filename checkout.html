@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    
+    <title>Checkout | Fashion Store</title>
+</head>
+
+<body>
+<div id="header"></div>
+    <div id="toast-container" class="fixed top-24 left-1/2 -translate-x-1/2 z-[6000] flex flex-col gap-3"></div>
+
+<main class="pt-20 pb-20 px-4">
+    <h1 class="text-center text-3xl font-semibold mb-3">
+        Checkout
+    </h1>
+
+    <p class="text-center text-gray-500 mb-12">
+        Complete your order details below.
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        <section class="lg:col-span-2">
+            <form id="checkout-form" class="border border-gray-200 rounded-2xl p-6 md:p-8">
+            <h2 class="text-xl font-semibold mb-6">
+            <i class="fa-regular fa-address-card mr-2"></i>
+                Shipping Information
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+            <label for="full-name" class="block text-sm font-medium mb-2">
+                 Full Name
+            </label>
+            
+            <input id="full-name"  name="name"  type="text" required  autocomplete="name" placeholder="Enter your full name"
+                 class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-olive-800">
+            </div>
+
+            <div> 
+            <label for="checkout-email" class="block text-sm font-medium mb-2">
+                 Email Address
+            </label>
+
+            <input id="checkout-email" name="email"type="email" autocomplete="email" readonly
+                class="w-full border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 text-gray-500 cursor-not-allowed">
+            </div>
+
+
+            <div class="md:col-span-2">
+            <label for="phone" class="block text-sm font-medium mb-2">
+                 Phone Number
+            </label>
+
+            <input id="phone" name="phone" type="tel" required autocomplete="tel"  placeholder="05xxxxxxxx"
+                class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-olive-800">
+            </div>
+
+            <div class="md:col-span-2">
+            <label for="address"  class="block text-sm font-medium mb-2">
+                Street Address
+            </label>
+
+            <input id="address" name="address" type="text" required autocomplete="street-address" placeholder="Building number, street name..."
+             class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-olive-800">
+            </div>
+
+            <div class="md:col-span-2">
+            <label for="city"  class="block text-sm font-medium mb-2">
+                 City
+            </label>
+
+            <input id="city" name="city" type="text" required autocomplete="address-level2" placeholder="Enter your city"
+            class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-olive-800">
+            </div>
+            </div>
+
+            <div class="border-t border-gray-200 mt-8 pt-6">
+            <h2 class="text-xl font-semibold mb-5">
+            <i class="fa-solid fa-wallet mr-2"></i>
+                Payment Method
+            </h2>
+
+            <label class="flex items-center gap-3 border border-olive-800 rounded-xl p-4 cursor-pointer">
+            <input type="radio" name="paymentMethod" value="cod" checked required class="accent-olive-800">
+
+            <div>
+            <p class="font-medium">Cash on Delivery</p>
+            <p class="text-sm text-gray-500 mt-1">
+                Pay when your order arrives.
+            </p>
+        </div>
+        </label>
+    </div>
+
+        <p id="checkout-error" role="alert" class="hidden text-sm text-red-600 mt-5"></p>
+        <div id="checkout-success" role="status" class="hidden text-sm text-green-700 mt-5"></div>
+
+        <button id="place-order-btn" type="submit" 
+            class="w-full mt-6 bg-olive-800 text-white py-3 rounded-xl hover:opacity-85 transition-opacity">
+                Place Order
+        </button>
+     </form>
+    </section>
+
+    <aside class="border border-gray-200 rounded-2xl p-6 h-fit">
+        <h2 class="text-xl font-semibold mb-6">
+             Order Summary
+        </h2>
+
+        <div id="checkout-items" class="flex flex-col gap-4 mb-6 min-w-0 overflow-hidden"></div>
+
+        <div id="checkout-empty" class="hidden text-center py-6">
+            <i class="fa-solid fa-cart-shopping text-3xl text-gray-400"></i>
+            <p class="font-medium mt-3">
+            Your cart is empty
+            </p>
+            <a href="shop.html"  class="inline-block text-olive-800 underline mt-2">
+                Continue Shopping
+            </a>
+        </div>
+
+        <div id="checkout-totals">
+        <div class="flex justify-between border-t border-gray-200 pt-4">
+            <span class="text-gray-600">Subtotal</span>
+            <span id="checkout-subtotal" class="font-medium">0 SAR</span>
+        </div>
+
+        <div class="flex justify-between py-4">
+            <span class="text-gray-600">Shipping</span>
+            <span>Free</span>
+        </div>
+
+        <div class="flex justify-between border-t border-gray-200 pt-4 text-lg font-bold">
+            <span>Total</span>
+            <span id="checkout-total">0 SAR</span>
+        </div>
+        </div>
+
+        <a href="cart.html" class="block text-center text-sm text-gray-500 hover:text-olive-800 mt-6">
+            <i class="fa-solid fa-arrow-left mr-1"></i>
+            Back to Cart
+    </a>
+    </aside>
+</div>
+</main>
+
+<div id="footer"></div>
+
+<script src="./js/header.js"></script>
+<script src="./js/data.js"></script>
+<script src="./js/store.js"></script>
+<script src="./js/footer.js"></script>
+<script src="./js/checkout.js"></script>
+
+</body>
+</html>

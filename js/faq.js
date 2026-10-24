@@ -1,10 +1,6 @@
 
 const faqBtns = document.querySelectorAll(".faq-btn");
 
-
-
-
-
 faqBtns.forEach(btn =>{
     btn.addEventListener("click", ()=>{
     const faqAnswer = btn.nextElementSibling;

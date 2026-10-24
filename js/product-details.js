@@ -89,12 +89,9 @@ sizeButtons.forEach(button => {
     });
 });
 
-
-
 function renderRelatedProducts(products, container) {
     container.innerHTML = products.map(product => {
         return `
-
         <div class="border border-gray-300 rounded-2xl p-2 w-64 shrink-0 ">
         <div class="relative">
         <a href="product-details.html?id=${product.id}">
@@ -122,7 +119,6 @@ const related = products.filter(product =>
         relatedProducts
     );
 
-
     relatedNext.addEventListener("click", () => {
     relatedProducts.scrollBy({
         left: 270,
@@ -139,10 +135,10 @@ relatedPrev.addEventListener("click", () => {
 
 let selectedColor = null;
 let selectedColorData = null;
+
     productColors.innerHTML = "";
     
     if(currentProduct.colors){
-
     currentProduct.colors.forEach(color => {
     const colorButton = document.createElement("div");
 
@@ -158,7 +154,6 @@ let selectedColorData = null;
 
     });
 }
-
 
 const defaultColor = currentProduct.colors[0];
 selectedColor = defaultColor.name;
@@ -182,53 +177,70 @@ productThumbnails.forEach((thumbnail, index) => {
     }
 });
 
+// To handle the image change when clicking on thumbnails, swiping, or using arrow keys, we can implement the following logic:
+
 let currentImageIndex = 0;
+
+function changeProductImage(index) {
+    const images = [
+        selectedColorData.image,
+        ...selectedColorData.thumbnails
+    ];
+
+    currentImageIndex = (index + images.length) % images.length;
+    productMainImage.src = images[currentImageIndex];
+}
 
 productThumbnails.forEach((thumbnail, index) => {
     thumbnail.addEventListener("click", () => {
-
         const image = selectedColorData.thumbnails[index];
 
         if (!image) return;
 
-        currentImageIndex = index;
-        productMainImage.src = image;
+        changeProductImage(index);
     });
 });
 
+let touchStartX = 0;
+let touchStartY = 0;
+
+productMainImage.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].screenX;
+    touchStartY = event.changedTouches[0].screenY;
+}, { passive: true });
+
+productMainImage.addEventListener("touchend", (event) => {
+    const touchEndX = event.changedTouches[0].screenX;
+    const touchEndY = event.changedTouches[0].screenY;
+
+    const differenceX = touchEndX - touchStartX;
+    const differenceY = touchEndY - touchStartY;
+
+    if (
+        Math.abs(differenceX) < 50 ||
+        Math.abs(differenceX) < Math.abs(differenceY)
+    ) {
+        return;
+    }
+
+    if (differenceX < 0) {
+        changeProductImage(currentImageIndex + 1);
+
+    } else {
+        changeProductImage(currentImageIndex - 1);
+    }
+}, { passive: true });
+
 
 document.addEventListener("keydown", (event) => {
-
-    const images = selectedColorData.thumbnails;
-
-    if (!images.length) return;
-
     if (event.key === "ArrowRight") {
-
-        currentImageIndex++;
-
-        if (currentImageIndex >= images.length) {
-            currentImageIndex = 0;
-        }
-
-        productMainImage.src = images[currentImageIndex];
+        changeProductImage(currentImageIndex + 1);
     }
-
 
     if (event.key === "ArrowLeft") {
-
-        currentImageIndex--;
-
-        if (currentImageIndex < 0) {
-            currentImageIndex = images.length - 1;
-        }
-
-        productMainImage.src = images[currentImageIndex];
+        changeProductImage(currentImageIndex - 1);
     }
-
 });
-
-
 
 const colorButtons = document.querySelectorAll(".product-colors > div");
 
@@ -250,6 +262,8 @@ colorButtons.forEach(button => {
         detailstModel.textContent = selectedColorData.details.model;
         detailsGender.textContent = selectedColorData.details.gender;
 
+        
+        currentImageIndex = 0;
         productMainImage.src = selectedColorData.image;
 
         productThumbnails.forEach((thumbnail, index) => {
@@ -307,14 +321,9 @@ cartBtn.addEventListener("click", () => {
         showToast("Added to cart");     
 });
 
-
-
 sizeGuideLink.href = `guide.html?type=${currentProduct.category.toLowerCase()}`;
 console.log(sizeGuideLink.href);
 }
-
-
-
 
 initWishlistButtons();
 updateWishlistButtons();
