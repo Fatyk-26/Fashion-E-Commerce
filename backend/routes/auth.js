@@ -8,6 +8,8 @@ const authMiddleware = require("../middleware/authMiddleware");
 const crypto = require("crypto");
 const transporter = require("../config/mailer");
 const rateLimit = require("express-rate-limit");
+const { Resend } = require("resend");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 router.post("/register", async (req, res) => {
 const { name, password } = req.body;
@@ -270,10 +272,11 @@ user.resetPasswordRequestedAt = new Date();
 await user.save();
 
     
+
 try {
-  await transporter.sendMail({
-    from: `"Fashion Store" <${process.env.EMAIL_USER}>`,
-    to: user.email,
+  const { data, error } = await resend.emails.send({
+    from: "Fashion Store <onboarding@resend.dev>",
+    to: [user.email],
     subject: "Fashion Store - Password Reset",
     text: `Your password reset code is ${code}. It expires in 10 minutes. If you didn't request this, please ignore this email.`,
     html: `
@@ -317,11 +320,18 @@ try {
           <p style="color: #aaaaaa; font-size: 12px;">
             &copy; Fashion Store
           </p>
-
         </div>
       </div>
     `
   });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  if (!data?.id) {
+    throw new Error("Resend did not confirm the email submission.");
+  }
 } catch (emailError) {
   user.resetPasswordCode = undefined;
   user.resetPasswordExpires = undefined;
@@ -332,6 +342,7 @@ try {
 
   throw emailError;
 }
+
 
 
     return res.status(200).json({ message: genericMessage });
