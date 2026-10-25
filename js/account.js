@@ -13,7 +13,7 @@ async function loadAccount() {
 
   try {
     const response = await fetch(
-      "http://localhost:3000/api/auth/me",
+      "http://fashion-e-commerce-4le4.onrender.com/api/auth/me",
       {
         method: "GET",
         headers: {
@@ -82,7 +82,7 @@ profileForm.addEventListener("submit", async (event) => {
 
   try {
     const response = await fetch(
-      "http://localhost:3000/api/auth/profile",
+      "http://fashion-e-commerce-4le4.onrender.com/api/auth/profile",
       {
         method: "PUT",
         headers: {
@@ -138,7 +138,7 @@ addressForm.addEventListener("submit", async (event) => {
 
   try {
     const response = await fetch(
-      "http://localhost:3000/api/auth/address",
+      "http://fashion-e-commerce-4le4.onrender.com/api/auth/address",
       {
         method: "PUT",
         headers: {
