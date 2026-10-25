@@ -39,7 +39,7 @@ resetForm.addEventListener("submit", async (event) => {
 
   try {
     const response = await fetch(
-      "http://fashion-e-commerce-4le4.onrender.com/api/auth/reset-password",
+      "https://fashion-e-commerce-4le4.onrender.com/api/auth/reset-password",
       {
         method: "POST",
         headers: {

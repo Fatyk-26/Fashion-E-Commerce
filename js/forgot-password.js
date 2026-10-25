@@ -14,7 +14,7 @@ forgotPasswordForm.addEventListener("submit", async (event) => {
   sendCodeBtn.textContent = "Sending...";
 
   try {
-    const response = await fetch("http://fashion-e-commerce-4le4.onrender.com/api/auth/forgot-password", {
+    const response = await fetch("https://fashion-e-commerce-4le4.onrender.com/api/auth/forgot-password", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

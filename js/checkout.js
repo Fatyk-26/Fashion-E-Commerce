@@ -9,7 +9,7 @@ const placeOrderBtn = document.querySelector("#place-order-btn");
 const fullNameInput = document.querySelector("#full-name");
 const checkoutEmailInput = document.querySelector("#checkout-email");
 
-const API_URL = "http://fashion-e-commerce-4le4.onrender.com/api";
+const API_URL = "https://fashion-e-commerce-4le4.onrender.com/api";
 
 async function fillUserInformation() {
     const token = sessionStorage.getItem("token");
