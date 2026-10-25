@@ -269,24 +269,70 @@ user.resetPasswordRequestedAt = new Date();
 
 await user.save();
 
-    try {
-      await transporter.sendMail({
-        from: process.env.EMAIL_USER,
-        to: user.email,
-        subject: "Fashion Store - Password Reset",
-        text: `Your password reset code is ${code}, It expires in 10 minutes. If you didn't request this, please ignore this email.`
-      });
-    } catch (emailError) {
-  
-      user.resetPasswordCode = undefined;
-      user.resetPasswordExpires = undefined;
-      user.resetPasswordAttempts = 0;
-      user.resetPasswordRequestedAt = undefined;
+    
+try {
+  await transporter.sendMail({
+    from: `"Fashion Store" <${process.env.EMAIL_USER}>`,
+    to: user.email,
+    subject: "Fashion Store - Password Reset",
+    text: `Your password reset code is ${code}. It expires in 10 minutes. If you didn't request this, please ignore this email.`,
+    html: `
+      <div style="background-color: #f7f5f2; padding: 35px 15px; font-family: Arial, sans-serif;">
+        <div style="max-width: 500px; margin: auto; background-color: #ffffff; padding: 35px; border-radius: 12px; text-align: center;">
+          <h1 style="color: #292722; letter-spacing: 3px; font-size: 24px;">
+            FASHION STORE
+          </h1>
 
-      await user.save();
+          <div style="width: 50px; height: 2px; background-color: #b7a58a; margin: 20px auto;"></div>
 
-      throw emailError;
-    }
+          <h2 style="color: #292722; font-size: 21px;">
+            Password Reset
+          </h2>
+
+          <p style="color: #666666; font-size: 15px; line-height: 1.7;">
+            We received a request to reset your password.
+            Use the code below to continue.
+          </p>
+
+          <div style="background-color: #f7f5f2; padding: 18px; margin: 25px 0; border-radius: 8px;">
+            <p style="margin: 0 0 8px; color: #777777; font-size: 13px;">
+              YOUR RESET CODE
+            </p>
+
+            <h2 style="margin: 0; color: #292722; letter-spacing: 8px; font-size: 30px;">
+              ${code}
+            </h2>
+          </div>
+
+          <p style="color: #777777; font-size: 14px;">
+            This code expires in <strong>10 minutes</strong>.
+          </p>
+
+          <p style="color: #888888; font-size: 13px; line-height: 1.7;">
+            If you didn't request a password reset, please ignore this email.
+          </p>
+
+          <hr style="border: none; border-top: 1px solid #eeeeee; margin: 25px 0;">
+
+          <p style="color: #aaaaaa; font-size: 12px;">
+            &copy; Fashion Store
+          </p>
+
+        </div>
+      </div>
+    `
+  });
+} catch (emailError) {
+  user.resetPasswordCode = undefined;
+  user.resetPasswordExpires = undefined;
+  user.resetPasswordAttempts = 0;
+  user.resetPasswordRequestedAt = undefined;
+
+  await user.save();
+
+  throw emailError;
+}
+
 
     return res.status(200).json({ message: genericMessage });
   } catch (error) {
