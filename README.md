@@ -20,5 +20,5 @@ A responsive e-commerce website that provides users with an interactive online s
 - Mongoose
 
 ## Project Status
-Preparing for deployment.
+Deployed and Live..
 
