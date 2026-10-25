@@ -24,21 +24,22 @@ forgotPasswordForm.addEventListener("submit", async (event) => {
 
     const data = await response.json();
 
-    message.textContent = "Check your email for the reset code.";
-    message.classList.remove("hidden", "text-red-600", "text-green-600");
+message.classList.remove("hidden", "text-red-600", "text-green-600");
 
-    if (response.ok) {
-      message.classList.add("text-green-600");
+if (response.ok) {
+  message.textContent = data.message || "Check your email for the reset code.";
+  message.classList.add("text-green-600");
 
-sessionStorage.setItem("resetEmail", email);
+  sessionStorage.setItem("resetEmail", email);
 
-setTimeout(() => {
-  window.location.href = "reset-password.html";
+  setTimeout(() => {
+    window.location.href = "reset-password.html";
   }, 1500);
 
-    } else {
-      message.classList.add("text-red-600");
-    }
+} else {
+  message.textContent = data.message || "Failed to send reset code.";
+  message.classList.add("text-red-600");
+}
 
   } catch (error) {
     message.textContent = "Unable to connect to the server, Please try again.";
